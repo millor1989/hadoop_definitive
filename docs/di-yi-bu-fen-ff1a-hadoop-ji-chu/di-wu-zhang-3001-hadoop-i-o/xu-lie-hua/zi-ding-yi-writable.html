@@ -1,0 +1,1372 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>自定义Writable和序列化框架 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../ji-yu-wen-jian-de-shu-ju-jie-gou.html" />
+    
+    
+    <link rel="prev" href="../xu-lie-hua.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    扉页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../di-yi-bu-fen-ff1a-hadoop-ji-chu.html">
+            
+                <a href="../../../di-yi-bu-fen-ff1a-hadoop-ji-chu.html">
+            
+                    
+                    第一部分：Hadoop基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../di-yi-zhang-3001-chu-shi-hadoop.html">
+            
+                <a href="../../di-yi-zhang-3001-chu-shi-hadoop.html">
+            
+                    
+                    第一章、初识Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../di-er-zhang-3001-mapreduce.html">
+            
+                <a href="../../di-er-zhang-3001-mapreduce.html">
+            
+                    
+                    第二章、MapReduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../di-san-zhang-3001-hdfs.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs.html">
+            
+                    
+                    第三章、HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../di-san-zhang-3001-hdfs/ji-chu-gai-nian.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs/ji-chu-gai-nian.html">
+            
+                    
+                    HDFS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../di-san-zhang-3001-hdfs/javajie-kou.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs/javajie-kou.html">
+            
+                    
+                    Java接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../../di-san-zhang-3001-hdfs/javajie-kou/du-xie.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs/javajie-kou/du-xie.html">
+            
+                    
+                    读写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.2" data-path="../../di-san-zhang-3001-hdfs/javajie-kou/cha-xun.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs/javajie-kou/cha-xun.html">
+            
+                    
+                    查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.3" data-path="../../di-san-zhang-3001-hdfs/javajie-kou/shan.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs/javajie-kou/shan.html">
+            
+                    
+                    删
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../di-san-zhang-3001-hdfs/shu-ju-liu.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs/shu-ju-liu.html">
+            
+                    
+                    数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../di-san-zhang-3001-hdfs/bing-xing-fu-zhi-ff08-distcp.html">
+            
+                <a href="../../di-san-zhang-3001-hdfs/bing-xing-fu-zhi-ff08-distcp.html">
+            
+                    
+                    并行复制（distcp）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../di-si-zhang-3001-yarn.html">
+            
+                <a href="../../di-si-zhang-3001-yarn.html">
+            
+                    
+                    第四章、YARN
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../di-si-zhang-3001-yarn/yarnji-chu.html">
+            
+                <a href="../../di-si-zhang-3001-yarn/yarnji-chu.html">
+            
+                    
+                    YARN基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../di-si-zhang-3001-yarn/yu-mapreduce-1-bi-jiao.html">
+            
+                <a href="../../di-si-zhang-3001-yarn/yu-mapreduce-1-bi-jiao.html">
+            
+                    
+                    与MapReduce 1比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../di-si-zhang-3001-yarn/yarndiao-du.html">
+            
+                <a href="../../di-si-zhang-3001-yarn/yarndiao-du.html">
+            
+                    
+                    YARN调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../di-wu-zhang-3001-hadoop-i-o.html">
+            
+                <a href="../../di-wu-zhang-3001-hadoop-i-o.html">
+            
+                    
+                    第五章、Hadoop I/O
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../shu-ju-wan-zheng-xing-he-ya-suo.html">
+            
+                <a href="../shu-ju-wan-zheng-xing-he-ya-suo.html">
+            
+                    
+                    数据完整性和压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../xu-lie-hua.html">
+            
+                <a href="../xu-lie-hua.html">
+            
+                    
+                    序列化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.5.2.1" data-path="zi-ding-yi-writable.html">
+            
+                <a href="zi-ding-yi-writable.html">
+            
+                    
+                    自定义Writable和序列化框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../ji-yu-wen-jian-de-shu-ju-jie-gou.html">
+            
+                <a href="../ji-yu-wen-jian-de-shu-ju-jie-gou.html">
+            
+                    
+                    基于文件的数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../di-er-bu-fen-ff1a-mapreduce.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce.html">
+            
+                    
+                    第二部分：MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang.html">
+            
+                    
+                    第六章、开发MapReduce应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/pei-zhi-api.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/pei-zhi-api.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/shi-yong-mrunit-xie-dan-yuan-ce-shi.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/shi-yong-mrunit-xie-dan-yuan-ce-shi.html">
+            
+                    
+                    测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/yun-xing.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/yun-xing.html">
+            
+                    
+                    运行和调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/diao-shi.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/diao-shi.html">
+            
+                    
+                    MapReduce工作流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce.html">
+            
+                    
+                    第七章、MapReduce如何工作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce/mapreduce-jobyun-xing-pou-xi.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce/mapreduce-jobyun-xing-pou-xi.html">
+            
+                    
+                    运行与故障
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce/shufflehe-sort.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce/shufflehe-sort.html">
+            
+                    
+                    混洗和分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce/taskzhi-xing.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/mapreduce/taskzhi-xing.html">
+            
+                    
+                    Task执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi.html">
+            
+                    
+                    第八章、MapReduce类型和格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/mapreducelei-xing.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/mapreducelei-xing.html">
+            
+                    
+                    MapReduce类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-ru-ge-shi.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-ru-ge-shi.html">
+            
+                    
+                    输入格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-chu-ge-shi.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-chu-ge-shi.html">
+            
+                    
+                    输出格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing.html">
+            
+                    
+                    第九章、MapReduce特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/counters.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/counters.html">
+            
+                    
+                    计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/sorting.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/sorting.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/joins.html">
+            
+                <a href="../../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/joins.html">
+            
+                    
+                    连接、副数据分发、MapReduce库类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html">
+            
+                    
+                    第三部分：Hadoop操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.html">
+            
+                    
+                    第十章、配置一个Hadoop集群
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.html">
+            
+                    
+                    集群规范、集群设置及安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.html">
+            
+                    
+                    Hadoop配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.html">
+            
+                    
+                    安全、基准集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.html">
+            
+                    
+                    第十一章、管理Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.html">
+            
+                    
+                    HDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.html">
+            
+                <a href="../../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.html">
+            
+                    
+                    监控和维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../di-si-bu-fen-ff1a-related-projects.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects.html">
+            
+                    
+                    第四部分：Related Projects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-12-zhang-3001-avro.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-12-zhang-3001-avro.html">
+            
+                    
+                    第12章、Avro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-13-zhang-3001-parquet.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-13-zhang-3001-parquet.html">
+            
+                    
+                    第13章、Parquet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-14-zhang-3001-flume.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-14-zhang-3001-flume.html">
+            
+                    
+                    第14章、Flume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-15-zhang-3001-sqoop.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-15-zhang-3001-sqoop.html">
+            
+                    
+                    第15章、Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-16-zhang-3001-pig.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-16-zhang-3001-pig.html">
+            
+                    
+                    第16章、Pig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive.html">
+            
+                    
+                    第17章、Hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.html">
+            
+                    
+                    安装Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.html">
+            
+                    
+                    运行Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.html">
+            
+                    
+                    HiveQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.html">
+            
+                    
+                    查询数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.html">
+            
+                    
+                    LanguageManualHive语言手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase.html">
+            
+                    
+                    第20章、HBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/ji-chu-gai-nian.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/ji-chu-gai-nian.html">
+            
+                    
+                    基础概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/hbase-versus-rdbms.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/hbase-versus-rdbms.html">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper.html">
+            
+                    
+                    第21章、ZooKeeper
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.8.1" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperfu-wu.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperfu-wu.html">
+            
+                    
+                    ZooKeeper服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.2" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperde-shi-yong.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperde-shi-yong.html">
+            
+                    
+                    ZooKeeper的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.3" data-path="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/sheng-chan-huan-jing-zhong-de-zookeeper.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/sheng-chan-huan-jing-zhong-de-zookeeper.html">
+            
+                    
+                    生产环境中的ZooKeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../../di-si-bu-fen-ff1a-related-projects/oozie.html">
+            
+                <a href="../../../di-si-bu-fen-ff1a-related-projects/oozie.html">
+            
+                    
+                    Oozie
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >自定义Writable和序列化框架</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="33&#x3001;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;writable&#xFF08;implementing-a-custom-writable&#xFF09;">3.3&#x3001;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Writable&#xFF08;Implementing a Custom Writable&#xFF09;</h3>
+<p>Hadoop&#x6709;&#x4E00;&#x7EC4;&#x81EA;&#x5E26;&#x7684;<strong>Writable</strong>&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x4E8E;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#xFF1B;&#x5076;&#x5C14;&#xFF0C;&#x4E5F;&#x6709;&#x8981;&#x81EA;&#x5B9A;&#x4E49;Writable&#x5B9E;&#x73B0;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;Writable&#xFF0C;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x63A7;&#x5236;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x548C;&#x6392;&#x5E8F;&#x987A;&#x5E8F;&#x3002;&#x56E0;&#x4E3A;Writables&#x662F;MapReduce&#x6570;&#x636E;&#x8DEF;&#x5F84;&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x8C03;&#x8BD5;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x53EF;&#x4EE5;&#x663E;&#x8457;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#x3002;Hadoop&#x81EA;&#x5E26;&#x7684;Writable&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x90FD;&#x662F;&#x8C03;&#x8BD5;&#x7684;&#x5F88;&#x597D;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x6700;&#x597D;&#x662F;&#x521B;&#x5EFA;&#x65B0;&#x7684;Writable&#x7C7B;&#x578B;&#x800C;&#x4E0D;&#x662F;&#x4F7F;&#x7528;&#x81EA;&#x5E26;&#x7684;&#x7C7B;&#x578B;&#x62FC;&#x51D1;&#x3002;</p>
+<p><strong>&#x5FE0;&#x544A;</strong>&#xFF1A;&#x5982;&#x679C;&#x8981;&#x8003;&#x8651;&#x5199;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Writable&#xFF0C;&#x4E5F;&#x8BB8;&#x503C;&#x5F97;&#x5C1D;&#x8BD5;&#x5176;&#x5B83;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#xFF0C;&#x6BD4;&#x5982;<strong>Avro</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x4EE5;&#x58F0;&#x660E;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x53C2;&#x8003;&#x7B2C;12&#x7AE0;&#x3002;</p>
+<p><strong>&#x4F8B; 5-7</strong>&#x3001;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Writable&#xFF1A;</p>
+<h6 id="&#x4F8B;-5-7-&#x3001;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x4E00;&#x5BF9;text&#x5BF9;&#x8C61;&#x7684;writable&#x5B9E;&#x73B0;">&#x4F8B; 5-7 &#x3001;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x4E00;&#x5BF9;Text&#x5BF9;&#x8C61;&#x7684;Writable&#x5B9E;&#x73B0;</h6>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.*;
+
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextPair</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">WritableComparable</span>&lt;<span class="hljs-title">TextPair</span>&gt; </span>{
+
+  <span class="hljs-keyword">private</span> Text first;
+  <span class="hljs-keyword">private</span> Text second;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TextPair</span><span class="hljs-params">()</span> </span>{
+    set(<span class="hljs-keyword">new</span> Text(), <span class="hljs-keyword">new</span> Text());
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TextPair</span><span class="hljs-params">(String first, String second)</span> </span>{
+    set(<span class="hljs-keyword">new</span> Text(first), <span class="hljs-keyword">new</span> Text(second));
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TextPair</span><span class="hljs-params">(Text first, Text second)</span> </span>{
+    set(first, second);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">set</span><span class="hljs-params">(Text first, Text second)</span> </span>{
+    <span class="hljs-keyword">this</span>.first = first;
+    <span class="hljs-keyword">this</span>.second = second;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Text <span class="hljs-title">getFirst</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> first;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Text <span class="hljs-title">getSecond</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> second;
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">(DataOutput out)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    first.write(out);
+    second.write(out);
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">readFields</span><span class="hljs-params">(DataInput in)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    first.readFields(in);
+    second.readFields(in);
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> first.hashCode() * <span class="hljs-number">163</span> + second.hashCode();
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object o)</span> </span>{
+    <span class="hljs-keyword">if</span> (o <span class="hljs-keyword">instanceof</span> TextPair) {
+      TextPair tp = (TextPair) o;
+      <span class="hljs-keyword">return</span> first.equals(tp.first) &amp;&amp; second.equals(tp.second);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> first + <span class="hljs-string">&quot;\t&quot;</span> + second;
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(TextPair tp)</span> </span>{
+    <span class="hljs-keyword">int</span> cmp = first.compareTo(tp.first);
+    <span class="hljs-keyword">if</span> (cmp != <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span> cmp;
+    }
+    <span class="hljs-keyword">return</span> second.compareTo(tp.second);
+  }
+}
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#x7684;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x76F4;&#x89C2;&#x7684;&#xFF1A;&#x6709;&#x4E24;&#x4E2A;<strong>Text</strong>&#x53D8;&#x91CF;&#xFF0C;<em>first</em>&#x548C;<em>second</em>&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x7684;&#x6784;&#x9020;&#x5668;&#x548C;<em>getter</em>&#x3001;<em>setter</em>&#x3002;&#x6240;&#x6709;&#x7684;<strong>Writable</strong>&#x5B9E;&#x73B0;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x9020;&#x5668;&#x4EE5;&#x4FBF;MapReduce&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x5B9E;&#x4F8B;&#x5316;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x8C03;&#x7528;<em>readFields()</em>&#x65B9;&#x6CD5;&#x586B;&#x5145;&#x5B57;&#x6BB5;&#x503C;&#x3002;<strong>Writable</strong>&#x5B9E;&#x4F8B;&#x662F;&#x53EF;&#x53D8;&#x7684;&#x5E76;&#x4E14;&#x7ECF;&#x5E38;&#x91CD;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5728;<em>write()</em>&#x65B9;&#x6CD5;&#x6216;&#x8005;<em>readFields()</em>&#x65B9;&#x6CD5;&#x4E2D;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>TextPair&#x7684;<em>write()</em>&#x65B9;&#x6CD5;&#x53CD;&#x8FC7;&#x6765;&#x901A;&#x8FC7;&#x59D4;&#x6D3E;&#x5E8F;&#x5217;&#x5316;&#x7ED9;Text&#x5BF9;&#x8C61;&#x7684;<em>write()</em>&#x65B9;&#x6CD5;&#x6765;&#x5E8F;&#x5217;&#x5316;&#x6BCF;&#x4E2A;Text&#x5B57;&#x6BB5;&#x5BF9;&#x8C61;&#x5230;&#x8F93;&#x51FA;&#x6D41;&#x3002;&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;<em>readFields()</em>&#x65B9;&#x6CD5;&#x59D4;&#x6D3E;Text&#x5BF9;&#x8C61;&#x7684;<em>readFields()</em>&#x65B9;&#x6CD5;&#x6765;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x8F93;&#x5165;&#x6D41;&#x4E2D;&#x7684;&#x5B57;&#x8282;&#x3002;<strong>DataOutput</strong>&#x548C;<strong>DataInput</strong>&#x63A5;&#x53E3;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x7528;&#x4E8E;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;Java&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x5E38;&#xFF0C;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x63A7;&#x5236;<strong>Wrtiable</strong>&#x5BF9;&#x8C61;&#x7684;&#x7EBF;&#x4E0A;&#x683C;&#x5F0F;&#xFF08;wire format&#xFF09;&#x3002;</p>
+<p>&#x6B63;&#x5982;&#x5728;Java&#x4E2D;&#x7F16;&#x5199;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#x4E00;&#x6837;&#xFF0C;&#x7F16;&#x5199;<strong>Writable</strong>&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x5199;&#x7EE7;&#x627F;&#x81EA;java.lang.Object&#x7684;<em>hashCode()</em>&#xFF0C;<em>equals()</em>&#xFF0C;<em>toString()</em>&#x65B9;&#x6CD5;&#x3002;<strong>HashPartitioner</strong>&#xFF08;MapReduce&#x4E2D;&#x7684;&#x9ED8;&#x8BA4;partitioner&#xFF09;&#x4F7F;&#x7528;<em>hashCode()</em>&#x65B9;&#x6CD5;&#x6765;&#x9009;&#x62E9;reduce&#x5206;&#x533A;&#x3002;&#x6240;&#x4EE5;&#x8981;&#x5199;&#x4E00;&#x4E2A;&#x597D;&#x7684;hash&#x51FD;&#x6570;&#x6070;&#x5F53;&#x7684;&#x786E;&#x4FDD;&#x6BCF;&#x4E2A;reduce&#x5206;&#x533A;&#x90FD;&#x6709;&#x76F8;&#x4F3C;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<p><strong>&#x8B66;&#x544A;&#xFF1A;</strong>&#x5982;&#x679C;&#x8981;&#x548C;<strong>TextOutputFormat</strong>&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Writable&#xFF0C;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x5B83;&#x7684;<em>toString()</em>&#x65B9;&#x6CD5;&#x3002;<strong>TextOutputFormat</strong>&#x4F1A;&#x4E3A;&#x8F93;&#x51FA;&#x7684;&#x8868;&#x793A;&#x5728;keys&#x548C;values&#x4E0A;&#x4F7F;&#x7528;<em>toString()</em>&#x65B9;&#x6CD5;&#x3002;</p>
+<p>TextPair&#x662F;&#x4E00;&#x4E2A;<strong>WritableComparable</strong>&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;<em>compareTo()</em>&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x6392;&#x5E8F;&#xFF1A;&#x5148;&#x6309;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6392;&#x5E8F;&#xFF0C;&#x518D;&#x6309;&#x7167;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6392;&#x5E8F;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x9664;&#x4E86;&#x5B83;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x7684;Text&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x91CF;&#xFF0C;TextPair&#x4E0E;<strong>TextArrayWritable</strong>&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x4E3A;<strong>TextArrayWritable</strong>&#x53EA;&#x662F;&#x4E00;&#x4E2A;<strong>Writable</strong>&#xFF0C;&#x4E0D;&#x662F;<strong>CompareWritable</strong>&#x3002;</p>
+<h4 id="331&#x3001;&#x4E3A;&#x4E86;&#x901F;&#x5EA6;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;rawcomparator&#xFF08;implementing-a-rawcomparator-for-speed&#xFF09;">3.3.1&#x3001;&#x4E3A;&#x4E86;&#x901F;&#x5EA6;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;RawComparator&#xFF08;Implementing a RawComparator for speed&#xFF09;</h4>
+<p>&#x5BF9;<strong>&#x4F8B;5-7</strong>&#x8FD8;&#x6709;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x7684;&#x5730;&#x65B9;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;TextPair&#x7528;&#x4F5C;MapReduce&#x7684;key&#x65F6;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6765;&#x4F7F;&#x7528;compareTo()&#x65B9;&#x6CD5;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x4E0D;&#x8FDB;&#x884C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x6BD4;&#x8F83;&#x3002;</p>
+<p>TextPair&#x662F;&#x4E24;&#x4E2A;Text&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x4E32;&#x8054;&#xFF0C;Text&#x5BF9;&#x8C61;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E3A;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6240;&#x5305;&#x542B;&#x7684;UTF-8&#x5B57;&#x8282;&#x6570;&#x7684;<strong>VInt</strong>&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x7740;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x7684;UTF-8&#x5B57;&#x8282;&#x3002;&#x5B9E;&#x73B0;RawComparator&#x6BD4;&#x8F83;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#xFF0C;&#x901A;&#x8FC7;&#x8BFB;&#x53D6;VInt&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x77E5;&#x9053;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;<strong>Text</strong>&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x8FDB;&#x800C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;<strong>Text</strong>&#x7684;&#x5E8F;&#x5217;&#x5316;&#x8868;&#x793A;&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF1B;&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;&#x504F;&#x79FB;&#x91CF;&#x53EF;&#x4EE5;&#x59D4;&#x6258;<strong>Text</strong>&#x5BF9;&#x8C61;&#x7684;<strong>RawComparator</strong>&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;&#x5982;<strong>&#x4F8B; 5-8</strong>&#x6240;&#x793A;&#xFF1A;</p>
+<h6 id="&#x4F8B;-5-8&#x3001;&#x6BD4;&#x8F83;textpair&#x5B57;&#x8282;&#x8868;&#x793A;&#x7684;rawcomparator&#xFF08;a-rawcomparator-for-comparing-textpair-byte-representations&#xFF09;">&#x4F8B; 5-8&#x3001;&#x6BD4;&#x8F83;TextPair&#x5B57;&#x8282;&#x8868;&#x793A;&#x7684;RawComparator&#xFF08;A RawComparator for comparing TextPair byte representations&#xFF09;</h6>
+<pre><code class="lang-java">  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Comparator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WritableComparator</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Text.Comparator TEXT_COMPARATOR = <span class="hljs-keyword">new</span> Text.Comparator();
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Comparator</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">super</span>(TextPair.class);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] b1, <span class="hljs-keyword">int</span> s1, <span class="hljs-keyword">int</span> l1,
+                       <span class="hljs-keyword">byte</span>[] b2, <span class="hljs-keyword">int</span> s2, <span class="hljs-keyword">int</span> l2)</span> </span>{
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">/* TextPair&#x7684;&#x7B2C;&#x4E00;&#x4E2A;Text&#x7684;&#x5E8F;&#x5217;&#x5316;&#x957F;&#x5EA6;&#xFF08;VInt&#x5360;&#x7528;&#x5B57;&#x8282;&#x6570;&#x5927;&#x5C0F; + VInt&#xFF09;
+         * VInt&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x5E94;&#x7684;UTF-8&#x7F16;&#x7801;&#x5B57;&#x8282;&#x7684;&#x6570;&#x91CF;
+         */</span>
+        <span class="hljs-keyword">int</span> firstL1 = WritableUtils.decodeVIntSize(b1[s1]) + readVInt(b1, s1);
+        <span class="hljs-keyword">int</span> firstL2 = WritableUtils.decodeVIntSize(b2[s2]) + readVInt(b2, s2);
+        <span class="hljs-comment">// &#x6BD4;&#x8F83;&#x7B2C;&#x4E00;&#x4E2A;Text&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5B57;&#x8282;&#x6570;&#x7EC4;</span>
+        <span class="hljs-keyword">int</span> cmp = TEXT_COMPARATOR.compare(b1, s1, firstL1, b2, s2, firstL2);
+        <span class="hljs-keyword">if</span> (cmp != <span class="hljs-number">0</span>) {
+          <span class="hljs-keyword">return</span> cmp;
+        }
+        <span class="hljs-comment">// &#x6BD4;&#x8F83;&#x7B2C;&#x4E8C;&#x4E2A;Text&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5B57;&#x8282;&#x6570;&#x7EC4;</span>
+        <span class="hljs-keyword">return</span> TEXT_COMPARATOR.compare(b1, s1 + firstL1, l1 - firstL1,
+                                       b2, s2 + firstL2, l2 - firstL2);
+      } <span class="hljs-keyword">catch</span> (IOException e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(e);
+      }
+    }
+  }
+
+  <span class="hljs-keyword">static</span> {
+    <span class="hljs-comment">// &#x6CE8;&#x518C;comparator</span>
+    WritableComparator.define(TextPair.class, <span class="hljs-keyword">new</span> Comparator());
+  }
+</code></pre>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x7EE7;&#x627F;&#x4E86;<strong>WritableComparator</strong>&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x5B9E;&#x73B0;<strong>RawComparator</strong>&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x65B9;&#x4FBF;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x9ED8;&#x8BA4;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;<strong>&#x6CE8;&#x518C;</strong>&#x4E86;&#x4E3A;TextPair&#x81EA;&#x5B9A;&#x4E49;&#x7684;raw comparator&#xFF0C;&#x4EE5;&#x4FBF;&#x5F53;MapReduce&#x4F7F;&#x7528;TextPair&#x65F6;&#x77E5;&#x9053;&#x4F7F;&#x7528;raw comparator&#x4F5C;&#x4E3A;<strong>&#x9ED8;&#x8BA4;</strong>&#x7684;comparator&#x3002;</p>
+<p><strong>WritableComparator</strong>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-java">TextPair tp1 = <span class="hljs-keyword">new</span> TextPair(<span class="hljs-string">&quot;ab&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>);
+TextPair tp2 = <span class="hljs-keyword">new</span> TextPair(<span class="hljs-string">&quot;ab&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+assertThat(WritableComparator.get(TextPair.class).compare(tp1, tp2), is(-<span class="hljs-number">1</span>));
+</code></pre>
+<h4 id="332&#x3001;&#x81EA;&#x5B9A;&#x4E49;comparators&#xFF08;custom-comparators&#xFF09;">3.3.2&#x3001;&#x81EA;&#x5B9A;&#x4E49;comparators&#xFF08;Custom comparators&#xFF09;</h4>
+<p>&#x524D;&#x4F8B;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x7F16;&#x5199;raw comparators&#x9700;&#x8981;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x5B57;&#x8282;&#x7EA7;&#x522B;&#x7684;&#x7EC6;&#x8282;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49;&#x7684;raw comparator&#x67E5;&#x770B;<em>org.apache.hadoop.io</em>&#x5305;&#x4E2D;<strong>Writable</strong>&#x7684;&#x4E00;&#x4E9B;&#x5B9E;&#x73B0;&#x6765;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x7684;&#x4E3B;&#x610F;&#x662F;&#x503C;&#x5F97;&#x7684;&#x3002;WritableUtils&#x4E2D;&#x7684;&#x5DE5;&#x5177;&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53EF;&#x80FD;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;comparators&#x4E5F;&#x5E94;&#x8BE5;&#x7F16;&#x5199;&#x4E3A;<strong>RawCompartators</strong>&#x3002;&#x8FD9;&#x4E9B;comparators&#x5B9E;&#x73B0;&#x4E86;&#x4E0D;&#x540C;&#x4E8E;&#x9ED8;&#x8BA4;comparator&#x81EA;&#x7136;&#x6392;&#x5E8F;&#x7684;&#x6392;&#x5E8F;&#x3002;&#x5982;<strong>&#x4F8B;5-9</strong>&#xFF0C;&#x5C55;&#x793A;&#x4E86;TextPair&#x7684;&#x4E00;&#x4E2A;comparator&#xFF0C;<strong>FirstComparator</strong>&#xFF0C;&#x5B83;&#x53EA;&#x6BD4;&#x8F83;TextPair&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;&#x5B83;&#x4E5F;&#x91CD;&#x5199;&#x4E86;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;<em>compare()</em>&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x4E24;&#x4E2A;compare()&#x65B9;&#x6CD5;&#x5C31;&#x6709;&#x76F8;&#x540C;&#x7684;&#x8BED;&#x4E49;&#xFF08;semantics&#xFF09;&#x3002;</p>
+<h6 id="&#x4F8B;-5-9&#x3001;&#x6BD4;&#x8F83;textpair&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x5B57;&#x8282;&#x8868;&#x793A;&#x7684;&#x81EA;&#x5B9A;&#x4E49;rawcomparator&#xFF08;a--custom-rawcomparator-for-comparing-the-first-field-of-textpair-byte-representations">&#x4F8B; 5-9&#x3001;&#x6BD4;&#x8F83;TextPair&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x5B57;&#x8282;&#x8868;&#x793A;&#x7684;&#x81EA;&#x5B9A;&#x4E49;RawComparator&#xFF08;A  custom RawComparator for comparing the first field of TextPair byte representations)</h6>
+<pre><code class="lang-java">  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FirstComparator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WritableComparator</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Text.Comparator TEXT_COMPARATOR = <span class="hljs-keyword">new</span> Text.Comparator();
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">FirstComparator</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">super</span>(TextPair.class);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] b1, <span class="hljs-keyword">int</span> s1, <span class="hljs-keyword">int</span> l1,
+                       <span class="hljs-keyword">byte</span>[] b2, <span class="hljs-keyword">int</span> s2, <span class="hljs-keyword">int</span> l2)</span> </span>{
+
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">int</span> firstL1 = WritableUtils.decodeVIntSize(b1[s1]) + readVInt(b1, s1);
+        <span class="hljs-keyword">int</span> firstL2 = WritableUtils.decodeVIntSize(b2[s2]) + readVInt(b2, s2);
+        <span class="hljs-keyword">return</span> TEXT_COMPARATOR.compare(b1, s1, firstL1, b2, s2, firstL2);
+      } <span class="hljs-keyword">catch</span> (IOException e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(e);
+      }
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(WritableComparable a, WritableComparable b)</span> </span>{
+      <span class="hljs-keyword">if</span> (a <span class="hljs-keyword">instanceof</span> TextPair &amp;&amp; b <span class="hljs-keyword">instanceof</span> TextPair) {
+        <span class="hljs-keyword">return</span> ((TextPair) a).first.compareTo(((TextPair) b).first);
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.compare(a, b);
+    }
+  }
+</code></pre>
+<h3 id="34&#x3001;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#xFF08;serialization-frameworks&#xFF09;">3.4&#x3001;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#xFF08;Serialization Frameworks&#xFF09;</h3>
+<p>&#x5C3D;&#x7BA1;&#x5927;&#x591A;&#x6570;MapReduce&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;Writable&#x4F5C;&#x4E3A;key&#x548C;value&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x8FD9;&#x4E0D;&#x662F;MapReduce API&#x7684;&#x8981;&#x6C42;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x8981;&#x6C42;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x7684;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x652F;&#x6301;&#x8FD9;&#xFF0C;Hadoop&#x6709;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x53EF;&#x62D4;&#x63D2;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#x7684;API&#x3002;&#x6BCF;&#x4E2A;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#x7528;&#x4E00;&#x4E2A;<strong>Serialization</strong>&#x5B9E;&#x73B0;&#xFF08;&#x5728;org.apache.hadoop.io.serializer&#x5305;&#x4E2D;&#xFF09;&#x8868;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<strong>WritableSerialization</strong>&#xFF0C;&#x662F;&#x7528;&#x4E8E;<strong>Writable</strong>&#x7C7B;&#x578B;&#x7684;<strong>Serialization</strong>&#x5B9E;&#x73B0;&#x3002;</p>
+<p><strong>Serialization</strong>&#x5B9A;&#x4E49;&#x4E86;&#x7C7B;&#x578B;&#x548C;<strong>Serializer</strong>&#x5B9E;&#x4F8B;&#xFF08;&#x628A;&#x5BF9;&#x8C61;&#x8F6C;&#x4E3A;&#x5B57;&#x8282;&#x6D41;&#xFF09;&#x548C;<strong>DeSerializer</strong>&#x5B9E;&#x4F8B;&#xFF08;&#x628A;&#x5B57;&#x8282;&#x6D41;&#x8F6C;&#x4E3A;&#x5BF9;&#x8C61;&#xFF09;&#x7684;&#x6620;&#x5C04;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;<strong><em>io.serializations</em></strong>&#x5C5E;&#x6027;&#x4E3A;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x7C7B;&#x540D;&#x96C6;&#x5408;&#x6765;&#x6CE8;&#x518C;<strong>Serialization</strong>&#x5B9E;&#x73B0;&#x3002;&#x5B83;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x5305;&#x62EC;<em>org.apache.hadoop.io.serializer.WritableSerialization</em>&#x548C;<em>Avro Specific and Reflect serializations</em>&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x6709;<strong>Writable</strong>&#x548C;<strong>Avro</strong>&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x3002;</p>
+<p>Hadoop&#x5305;&#x62EC;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;Java&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x7684;<strong>JavaSerialization</strong>&#x3002;&#x5C3D;&#x7BA1;&#x5B83;&#x8BA9;&#x5728;MapReduce&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;Java&#x6807;&#x51C6;&#x7C7B;&#x578B;&#x4F8B;&#x5982;<strong>Integer</strong>&#x548C;<strong>String</strong>&#x53D8;&#x5F97;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;<strong>Java Object Serialization</strong>&#x4E0D;&#x50CF;<strong>Writables</strong>&#x90A3;&#x6837;&#x9AD8;&#x6548;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x503C;&#x5F97;&#x4F5C;&#x8FD9;&#x79CD;&#x6743;&#x8861;&#x3002;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528;Java Object Serialization&#xFF1F;Java&#x81EA;&#x5DF1;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x673A;&#x5236;Java Object Serialization&#xFF08;&#x7B80;&#x79F0;Java Serialization&#xFF09;&#xFF0C;&#x662F;&#x548C;Java&#x8BED;&#x8A00;&#x7D27;&#x5BC6;&#x7ED1;&#x5B9A;&#x7684;&#xFF0C;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;Hadoop&#x7CFB;&#x7EDF;compact&#x3001;fast&#x3001;extensible&#x3001;interoperable&#x7684;&#x8981;&#x6C42;&#x3002;</p>
+<h4 id="341&#x3001;&#x5E8F;&#x5217;&#x5316;idl&#xFF08;serializationidl&#xFF09;">3.4.1&#x3001;&#x5E8F;&#x5217;&#x5316;IDL&#xFF08;SerializationIDL&#xFF09;</h4>
+<p>&#x6709;&#x4E9B;&#x5176;&#x5B83;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x4E0D;&#x662F;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x662F;&#x4EE5;&#x8BED;&#x8A00;&#x4E2D;&#x7ACB;&#xFF08;language-neutral &#x8BED;&#x8A00;&#x65E0;&#x5173;&#xFF09;&#x58F0;&#x660E;&#x7684;&#x5F62;&#x5F0F;&#x4F7F;&#x7528;<strong>IDL</strong>&#xFF08;<em>interface description language</em>&#xFF09;&#x5B9A;&#x4E49;&#x3002;&#x8FD9;&#x4E2A;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x4E3A;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x751F;&#x6210;&#x7C7B;&#x578B;&#xFF0C;&#x6709;&#x76CA;&#x4E8E;&#x901A;&#x7528;&#x6027;&#xFF08;interoperability&#xFF09;&#x3002;&#x5B83;&#x4EEC;&#x4E00;&#x822C;&#x5B9A;&#x4E49;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;scheme&#x4F7F;&#x7C7B;&#x578B;&#x6539;&#x8FDB;&#x76F4;&#x89C2;&#x3002;</p>
+<p><strong>Apache Thrift</strong>&#x548C;<strong>Google Protocol Buffers</strong>&#x90FD;&#x662F;&#x6D41;&#x884C;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#xFF0C;&#x90FD;&#x662F;&#x662F;&#x5E38;&#x7528;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x683C;&#x5F0F;&#x3002;&#x628A;&#x5B83;&#x4EEC;&#x7528;&#x4F5C;MapReduce&#x683C;&#x5F0F;&#x4EC5;&#x6709;&#x6709;&#x9650;&#x7684;&#x652F;&#x6301;&#xFF1B;&#x53EF;&#x662F;&#x5B83;&#x4EEC;&#x5185;&#x5728;&#x5730;&#x4F5C;&#x4E3A;Hadoop&#x7684;&#x4E00;&#x90E8;&#x5206;&#x7528;&#x4E8E;RPC&#x548C;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x3002;</p>
+<p><strong>Avro</strong>&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;IDL&#x7684;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#xFF0C;&#x975E;&#x5E38;&#x9002;&#x7528;&#x4E8E;Hadoop&#x5927;&#x89C4;&#x6A21;&#x6570;&#x636E;&#x5904;&#x7406;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../xu-lie-hua.html" class="navigation navigation-prev " aria-label="Previous page: 序列化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../ji-yu-wen-jian-de-shu-ju-jie-gou.html" class="navigation navigation-next " aria-label="Next page: 基于文件的数据结构">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"自定义Writable和序列化框架","level":"1.2.5.2.1","depth":4,"next":{"title":"基于文件的数据结构","level":"1.2.5.3","depth":3,"path":"di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/ji-yu-wen-jian-de-shu-ju-jie-gou.md","ref":"di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/ji-yu-wen-jian-de-shu-ju-jie-gou.md","articles":[]},"previous":{"title":"序列化","level":"1.2.5.2","depth":3,"path":"di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua.md","ref":"di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua.md","articles":[{"title":"自定义Writable和序列化框架","level":"1.2.5.2.1","depth":4,"path":"di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua/zi-ding-yi-writable.md","ref":"di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua/zi-ding-yi-writable.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua/zi-ding-yi-writable.md","mtime":"2019-09-12T07:20:20.224Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-04T10:00:27.200Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

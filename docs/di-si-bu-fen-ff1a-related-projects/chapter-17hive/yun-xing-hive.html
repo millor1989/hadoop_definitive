@@ -1,0 +1,1321 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>运行Hive · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="hiveql.html" />
+    
+    
+    <link rel="prev" href="ru-men.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    扉页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu.html">
+            
+                    
+                    第一部分：Hadoop基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-yi-zhang-3001-chu-shi-hadoop.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-yi-zhang-3001-chu-shi-hadoop.html">
+            
+                    
+                    第一章、初识Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-er-zhang-3001-mapreduce.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-er-zhang-3001-mapreduce.html">
+            
+                    
+                    第二章、MapReduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs.html">
+            
+                    
+                    第三章、HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/ji-chu-gai-nian.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/ji-chu-gai-nian.html">
+            
+                    
+                    HDFS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou.html">
+            
+                    
+                    Java接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/du-xie.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/du-xie.html">
+            
+                    
+                    读写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/cha-xun.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/cha-xun.html">
+            
+                    
+                    查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/shan.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/shan.html">
+            
+                    
+                    删
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/shu-ju-liu.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/shu-ju-liu.html">
+            
+                    
+                    数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/bing-xing-fu-zhi-ff08-distcp.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/bing-xing-fu-zhi-ff08-distcp.html">
+            
+                    
+                    并行复制（distcp）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn.html">
+            
+                    
+                    第四章、YARN
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarnji-chu.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarnji-chu.html">
+            
+                    
+                    YARN基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yu-mapreduce-1-bi-jiao.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yu-mapreduce-1-bi-jiao.html">
+            
+                    
+                    与MapReduce 1比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarndiao-du.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarndiao-du.html">
+            
+                    
+                    YARN调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o.html">
+            
+                    
+                    第五章、Hadoop I/O
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/shu-ju-wan-zheng-xing-he-ya-suo.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/shu-ju-wan-zheng-xing-he-ya-suo.html">
+            
+                    
+                    数据完整性和压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua.html">
+            
+                    
+                    序列化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua/zi-ding-yi-writable.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua/zi-ding-yi-writable.html">
+            
+                    
+                    自定义Writable和序列化框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/ji-yu-wen-jian-de-shu-ju-jie-gou.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/ji-yu-wen-jian-de-shu-ju-jie-gou.html">
+            
+                    
+                    基于文件的数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-er-bu-fen-ff1a-mapreduce.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce.html">
+            
+                    
+                    第二部分：MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang.html">
+            
+                    
+                    第六章、开发MapReduce应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/pei-zhi-api.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/pei-zhi-api.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/shi-yong-mrunit-xie-dan-yuan-ce-shi.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/shi-yong-mrunit-xie-dan-yuan-ce-shi.html">
+            
+                    
+                    测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/yun-xing.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/yun-xing.html">
+            
+                    
+                    运行和调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/diao-shi.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/diao-shi.html">
+            
+                    
+                    MapReduce工作流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../di-er-bu-fen-ff1a-mapreduce/mapreduce.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/mapreduce.html">
+            
+                    
+                    第七章、MapReduce如何工作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../di-er-bu-fen-ff1a-mapreduce/mapreduce/mapreduce-jobyun-xing-pou-xi.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/mapreduce/mapreduce-jobyun-xing-pou-xi.html">
+            
+                    
+                    运行与故障
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../di-er-bu-fen-ff1a-mapreduce/mapreduce/shufflehe-sort.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/mapreduce/shufflehe-sort.html">
+            
+                    
+                    混洗和分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../di-er-bu-fen-ff1a-mapreduce/mapreduce/taskzhi-xing.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/mapreduce/taskzhi-xing.html">
+            
+                    
+                    Task执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi.html">
+            
+                    
+                    第八章、MapReduce类型和格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/mapreducelei-xing.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/mapreducelei-xing.html">
+            
+                    
+                    MapReduce类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-ru-ge-shi.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-ru-ge-shi.html">
+            
+                    
+                    输入格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-chu-ge-shi.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-chu-ge-shi.html">
+            
+                    
+                    输出格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing.html">
+            
+                    
+                    第九章、MapReduce特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/counters.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/counters.html">
+            
+                    
+                    计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/sorting.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/sorting.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/joins.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/joins.html">
+            
+                    
+                    连接、副数据分发、MapReduce库类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html">
+            
+                    
+                    第三部分：Hadoop操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.html">
+            
+                    
+                    第十章、配置一个Hadoop集群
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.html">
+            
+                    
+                    集群规范、集群设置及安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.html">
+            
+                    
+                    Hadoop配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.html">
+            
+                    
+                    安全、基准集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.html">
+            
+                    
+                    第十一章、管理Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.html">
+            
+                    
+                    HDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.html">
+            
+                    
+                    监控和维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-si-bu-fen-ff1a-related-projects.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects.html">
+            
+                    
+                    第四部分：Related Projects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../di-12-zhang-3001-avro.html">
+            
+                <a href="../di-12-zhang-3001-avro.html">
+            
+                    
+                    第12章、Avro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../di-13-zhang-3001-parquet.html">
+            
+                <a href="../di-13-zhang-3001-parquet.html">
+            
+                    
+                    第13章、Parquet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../di-14-zhang-3001-flume.html">
+            
+                <a href="../di-14-zhang-3001-flume.html">
+            
+                    
+                    第14章、Flume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../di-15-zhang-3001-sqoop.html">
+            
+                <a href="../di-15-zhang-3001-sqoop.html">
+            
+                    
+                    第15章、Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../di-16-zhang-3001-pig.html">
+            
+                <a href="../di-16-zhang-3001-pig.html">
+            
+                    
+                    第16章、Pig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../chapter-17hive.html">
+            
+                <a href="../chapter-17hive.html">
+            
+                    
+                    第17章、Hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="ru-men.html">
+            
+                <a href="ru-men.html">
+            
+                    
+                    安装Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.6.2" data-path="yun-xing-hive.html">
+            
+                <a href="yun-xing-hive.html">
+            
+                    
+                    运行Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="hiveql.html">
+            
+                <a href="hiveql.html">
+            
+                    
+                    HiveQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="cha-xun-shu-ju.html">
+            
+                <a href="cha-xun-shu-ju.html">
+            
+                    
+                    查询数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="languagemanualhiveyu-yan-shou-ce.html">
+            
+                <a href="languagemanualhiveyu-yan-shou-ce.html">
+            
+                    
+                    LanguageManualHive语言手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../di-20-zhang-3001-hbase.html">
+            
+                <a href="../di-20-zhang-3001-hbase.html">
+            
+                    
+                    第20章、HBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../di-20-zhang-3001-hbase/ji-chu-gai-nian.html">
+            
+                <a href="../di-20-zhang-3001-hbase/ji-chu-gai-nian.html">
+            
+                    
+                    基础概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../di-20-zhang-3001-hbase/hbase-versus-rdbms.html">
+            
+                <a href="../di-20-zhang-3001-hbase/hbase-versus-rdbms.html">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../di-21-zhang-3001-zookeeper.html">
+            
+                <a href="../di-21-zhang-3001-zookeeper.html">
+            
+                    
+                    第21章、ZooKeeper
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.8.1" data-path="../di-21-zhang-3001-zookeeper/zookeeperfu-wu.html">
+            
+                <a href="../di-21-zhang-3001-zookeeper/zookeeperfu-wu.html">
+            
+                    
+                    ZooKeeper服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.2" data-path="../di-21-zhang-3001-zookeeper/zookeeperde-shi-yong.html">
+            
+                <a href="../di-21-zhang-3001-zookeeper/zookeeperde-shi-yong.html">
+            
+                    
+                    ZooKeeper的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.3" data-path="../di-21-zhang-3001-zookeeper/sheng-chan-huan-jing-zhong-de-zookeeper.html">
+            
+                <a href="../di-21-zhang-3001-zookeeper/sheng-chan-huan-jing-zhong-de-zookeeper.html">
+            
+                    
+                    生产环境中的ZooKeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../oozie.html">
+            
+                <a href="../oozie.html">
+            
+                    
+                    Oozie
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >运行Hive</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="4&#x3001;running-hive">4&#x3001;Running Hive</h2>
+<h3 id="41&#x3001;configuring-hive">4.1&#x3001;Configuring Hive</h3>
+<p>&#x4F7F;&#x7528;&#x4E0E;Hadoop&#x7C7B;&#x4F3C;&#x7684;XML&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;<em>hive-site.xml</em>&#xFF0C;&#x4F4D;&#x4E8E;Hive&#x7684;<em>conf</em>&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E5F;&#x5305;&#x542B;&#x4E86;Hive&#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<em>hive-default.xml</em>&#xFF09;&#x914D;&#x7F6E;Hive&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x7ED9;<em>hive</em>&#x547D;&#x4EE4;&#x4F20;&#x9012;<strong>--config</strong>&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x8986;&#x76D6;<em>hive-site.xml</em>&#x6587;&#x4EF6;&#x4E2D;Hive&#x67E5;&#x627E;&#x914D;&#x7F6E;&#x7684;&#x76EE;&#x5F55;&#xFF1A;</p>
+<pre><code>% hive --config /Users/tom/dev/hive-conf
+</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x6307;&#x5B9A;&#x4E86;&#x914D;&#x7F6E;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF08;containing directory&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;<em>hive-stie.xml</em>&#x672C;&#x8EAB;&#x3002;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;site&#x6587;&#x4EF6;&#x2014;&#x2014;&#x6BD4;&#x5982;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x96C6;&#x7FA4;&#x2014;&#x2014;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x5C31;&#x5F88;&#x6709;&#x7528;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x7ECF;&#x5E38;&#x5728;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x4E4B;&#x95F4;&#x5207;&#x6362;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<strong>HIVE_CONF_DIR</strong>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E3A;&#x914D;&#x7F6E;&#x76EE;&#x5F55;&#x5DF2;&#x8FBE;&#x5230;&#x76F8;&#x540C;&#x76EE;&#x7684;&#x3002;</p>
+<p><em>hive-site.xml</em>&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x96C6;&#x7FA4;&#x8FDE;&#x63A5;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;<em>fs.defaultFS</em>&#xFF09;&#x548C;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#xFF08;<em>yarn.resourcemanager.address</em>&#xFF09;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x672C;&#x5730;&#xFF08;in-process&#xFF09;job runner&#x2014;&#x2014;&#x4E0E;Hadoop&#x4E2D;&#x7C7B;&#x4F3C;&#x2014;&#x2014;&#x5728;&#x5C0F;&#x7684;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x4F7F;&#x7528;Hive&#x65F6;&#x5F88;&#x65B9;&#x4FBF;&#x3002;Metastore&#x914D;&#x7F6E;&#x8BBE;&#x7F6E;&#x9009;&#x9879;&#x4E5F;&#x5728;<em>hive-site.xml</em>&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x7ED9;<em>hive</em>&#x547D;&#x4EE4;&#x4F20;&#x9012;<strong>-hiveconf</strong>&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x4F1A;&#x8BDD;&#x5BF9;Hive&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x4E3A;&#x4F1A;&#x8BDD;&#x8BBE;&#x7F6E;&#x4E86;&#x96C6;&#x7FA4;&#xFF1A;</p>
+<pre><code>% hive -hiveconf fs.defaultFS=hdfs://localhost \
+  -hiveconf mapreduce.framework.name=yarn \
+  -hiveconf yarn.resourcemanager.address=localhost:8032
+</code></pre><p>&#x4F7F;&#x7528;<strong>SET</strong>&#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x4E2D;&#x6539;&#x53D8;Hive&#x8BBE;&#x7F6E;&#x3002;&#x5BF9;&#x4E8E;&#x6539;&#x53D8;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x67E5;&#x8BE2;&#x7684;Hive&#x8BBE;&#x7F6E;&#x5F88;&#x6709;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x786E;&#x4FDD;</p>
+<p>&#x6839;&#x636E;&#x8868;&#x7684;&#x5B9A;&#x4E49;&#x88C5;&#x914D;buckects&#xFF1A;</p>
+<pre><code>hive&gt; SET hive.enforce.bucketing=true;
+</code></pre><p>&#x4F7F;&#x7528;<strong>SET</strong>&#x548C;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x7684;&#x5F53;&#x524D;&#x503C;&#xFF1A;</p>
+<pre><code>hive&gt; SET hive.enforce.bucketing;
+hive.enforce.bucketing=true
+</code></pre><p>&#x5982;&#x679C;&#x53EA;&#x6709;<strong>SET</strong>&#x547D;&#x4EE4;&#xFF0C;&#x4F1A;&#x5217;&#x51FA;Hive&#x8BBE;&#x7F6E;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x548C;&#x5C5E;&#x6027;&#x503C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x4E0D;&#x5305;&#x542B;Hadop&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x9664;&#x975E;&#x662F;&#x7528;&#x6237;&#x660E;&#x786E;&#x8BBE;&#x7F6E;&#x4E86;&#x3002;&#x4F7F;&#x7528;<strong>SET -v</strong>&#x547D;&#x4EE4;&#x5217;&#x51FA;&#x7CFB;&#x7EDF;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x542B;Hadoop&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<p>Hive&#x914D;&#x7F6E;&#x4F18;&#x5148;&#x7EA7;&#xFF1A;</p>
+<ol>
+<li>Hive <strong>SET</strong>&#x547D;&#x4EE4;</li>
+<li>&#x547D;&#x4EE4;&#x884C;<strong>-hiveconf</strong>&#x9009;&#x9879;</li>
+<li><em>hive-site.xml</em>&#x548C;Hadoop site&#x6587;&#x4EF6;&#xFF08;<em>core-site.xml</em>&#xFF0C;<em>hdfs-site.xml</em>&#xFF0C;<em>mapred-site.xml</em>&#xFF0C;<em>yarn-site.xml</em>&#xFF09;</li>
+<li>Hive&#x9ED8;&#x8BA4;&#x503C;&#x548C;Hadoop&#x9ED8;&#x8BA4;&#x6587;&#x4EF6;&#xFF08;<em>core-default.xml</em>&#xFF0C;<em>hdfs-default.xml</em>&#xFF0C;<em>mapred-default.xml</em>&#xFF0C;<em>yarn-default.xml</em>&#xFF09;</li>
+</ol>
+<h4 id="411&#x3001;execution-engines">4.1.1&#x3001;Execution engines</h4>
+<p>Hive&#x6700;&#x521D;&#x4F7F;&#x7528;MapReduce&#x4F5C;&#x4E3A;&#x6267;&#x884C;&#x5F15;&#x64CE;&#xFF0C;&#x5E76;&#x4E14;&#x4ECD;&#x7136;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x3002;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Apache Tez&#x4F5C;&#x4E3A;&#x5B83;&#x7684;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x3002;Tez&#x548C;Spark&#x90FD;&#x662F;&#x901A;&#x7528;DAG&#xFF08;directed acyclic graph&#xFF09;&#x5F15;&#x64CE;&#xFF0C;&#x6BD4;MapReduce&#x66F4;&#x7075;&#x6D3B;&#x6027;&#x80FD;&#x66F4;&#x597D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E0E;MapReduce&#x4E0D;&#x540C;&#xFF0C;Tez&#x548C;Spark&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x628A;&#x4E2D;&#x95F4;&#x8F93;&#x51FA;&#x5199;&#x5230;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x6216;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x6765;&#x907F;&#x514D;&#x590D;&#x672C;&#x5F00;&#x9500;&#xFF08;replication overhead&#xFF09;&#x3002;</p>
+<p>&#x6267;&#x884C;&#x5F15;&#x64CE;&#x7531;&#x5C5E;&#x6027;<em>hive.execution.engine</em>&#x63A7;&#x5236;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<strong>mr</strong>&#xFF08;MapReduce&#xFF09;&#x3002;&#x53EF;&#x4EE5;&#x5F88;&#x7B80;&#x5355;&#x7684;&#x4E3A;&#x6BCF;&#x4E2A;&#x67E5;&#x8BE2;&#x5207;&#x6362;&#x6267;&#x884C;&#x5F15;&#x64CE;&#xFF1A;</p>
+<pre><code>hive&gt; SET hive.execution.engine=tez;
+</code></pre><p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4F7F;&#x7528;Tez&#x4E4B;&#x524D;&#x8981;&#x5148;&#x5728;&#x96C6;&#x7FA4;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x3002;</p>
+<h4 id="412&#x3001;logging">4.1.2&#x3001;Logging</h4>
+<p>&#x53EF;&#x4EE5;&#x4ECE;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;<em>${java.io.tmpdir}/${user.name}/hive.log</em>&#x67E5;&#x770B;Hive&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x3002;&#x8BCA;&#x65AD;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x6216;&#x8005;&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x65E5;&#x5FD7;&#x5F88;&#x6709;&#x7528;&#x3002;Hadoop&#x7684;MapReduce task&#x65E5;&#x5FD7;&#x4E5F;&#x662F;&#x6709;&#x7528;&#x7684;&#x6545;&#x969C;&#x6392;&#x9664;&#x65E5;&#x5FD7;&#x3002;</p>
+<p>&#x5728;&#x8BB8;&#x591A;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;<em>${java.io.tmpdir}</em>&#x662F;<em>/tmp</em>&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x8BBE;&#x7F6E;&#xFF1A;</p>
+<pre><code>% hive -hiveconf hive.log.dir=&apos;/tmp/${user.name}&apos;
+</code></pre><p>&#x65E5;&#x5FD7;&#x901A;&#x8FC7;<em>conf/hive-log4j.properties</em>&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x3002;&#x4E3A;&#x67D0;&#x4E2A;&#x4F1A;&#x8BDD;&#x6539;&#x53D8;&#x65E5;&#x5FD7;&#x914D;&#x7F6E;&#x662F;&#x66F4;&#x7B80;&#x4FBF;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code>% hive -hiveconf hive.root.logger=DEBUG,console
+</code></pre><h3 id="42&#x3001;hive-services">4.2&#x3001;Hive Services</h3>
+<p>Hive shell&#x662F;&#x51E0;&#x4E2A;Hive&#x670D;&#x52A1;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x3002;&#x8F93;&#x5165;<em>hive --service help</em>&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x53EF;&#x7528;Hive&#x670D;&#x52A1;&#x5217;&#x8868;&#xFF1B;&#x6700;&#x6709;&#x7528;&#x7684;&#x670D;&#x52A1;&#x6709;&#xFF1A;</p>
+<ul>
+<li><p><strong>cli</strong></p>
+<p>Hive&#xFF08;shell&#xFF09;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;&#x3002;Hive&#x9ED8;&#x8BA4;&#x7684;&#x670D;&#x52A1;&#x3002;</p>
+</li>
+<li><p><strong>hiveserver2</strong></p>
+<p>&#x4EE5;&#x63D0;&#x4F9B;Thrift&#x670D;&#x52A1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x6765;&#x8FD0;&#x884C;Hive&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8BBF;&#x95EE;&#x3002;HiveServer 2&#x76F8;&#x6BD4;&#x4E8E;HiveServer&#x652F;&#x6301;&#x4E86;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#x548C;&#x591A;&#x7528;&#x6237;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#x3002;&#x4F7F;&#x7528;Thrift&#xFF0C;JDBC&#xFF0C;&#x548C;ODBC connectors&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x901A;&#x8FC7;Hive&#x670D;&#x52A1;&#x5668;&#x548C;Hive&#x901A;&#x4FE1;&#x3002;&#x8BBE;&#x7F6E;<em>hive.server2.thrift.port</em>&#x914D;&#x7F6E;&#x5C5E;&#x6027;&#x6765;&#x6307;&#x5B9A;server&#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;10000&#xFF09;&#x3002;HiveServer 2&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x5DF2;&#x7ECF;&#x5E9F;&#x5F03;&#x5F97;HiveServer&#x800C;&#x8A00;&#x7684;&#x3002;</p>
+</li>
+<li><p><strong>beeline</strong></p>
+<p>&#x4EE5;&#x5D4C;&#x5165;&#x5F0F;&#x6A21;&#x5F0F;&#x5DE5;&#x4F5C;&#xFF08;&#x4E0E;&#x666E;&#x901A;&#x7684;CLI&#x7C7B;&#x4F3C;&#xFF09;&#x6216;&#x8005;&#x4F7F;&#x7528;JDBC&#x8FDE;&#x63A5;HiveServer2&#x8FD0;&#x884C;&#x7684;Hive&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;</p>
+</li>
+<li><p><strong>hwi</strong></p>
+<p>Hive Web Interface&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;CLI&#x5907;&#x9009;&#x9879;&#x7684;&#x7B80;&#x5355;&#x7684;web&#x63A5;&#x53E3;&#xFF0C;&#x4E0D;&#x7528;&#x5B89;&#x88C5;&#x4EFB;&#x4F55;&#x8F6F;&#x4EF6;&#x3002;</p>
+</li>
+<li><p><strong>jar</strong></p>
+<p><em>hadoop jar</em>&#x547D;&#x4EE4;&#x7684;Hive&#x7B49;&#x4EF7;&#xFF0C;&#x8FD0;&#x884C;&#x5305;&#x542B;classpath&#x4E2D;&#x7684;Hadoop&#x548C;Hive&#x7C7B;&#x7684;Java&#x5E94;&#x7528;&#x7684;&#x7B80;&#x5355;&#x65B9;&#x5F0F;&#x3002;</p>
+</li>
+<li><p><strong>metastore</strong></p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;metastore&#x8FD0;&#x884C;&#x5728;&#x4E0E;Hive&#x670D;&#x52A1;&#x76F8;&#x540C;&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x3002;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x4EE5;&#x72EC;&#x7ACB;&#xFF08;&#x8FDC;&#x7A0B;&#xFF09;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;metastore&#x3002;&#x901A;&#x8FC7;<strong>METASTORE_PORT</strong>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF08;&#x4F7F;&#x7528;<strong>-p</strong>&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#xFF09;&#x8BBE;&#x7F6E;&#x670D;&#x52A1;&#x5668;&#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;&#xFF08;&#x9ED8;&#x8BA4;9083&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<h4 id="421&#x3001;hive-clients">4.2.1&#x3001;Hive clients</h4>
+<p>&#x5982;&#x679C;&#x628A;Hive&#x8FD0;&#x884C;&#x4E3A;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x4F7F;&#x7528;&#x547D;&#x4EE4;<em>hive --service hiveserver2</em>&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6709;&#x51E0;&#x4E2A;&#x4ECE;&#x5E94;&#x7528;&#x8FDE;&#x63A5;&#x5230;&#x5B83;&#x7684;&#x4E0D;&#x540C;&#x673A;&#x5236;&#xFF08;Hive&#x5BA2;&#x6237;&#x7AEF;&#x548C;Hive&#x670D;&#x52A1;&#x7684;&#x5173;&#x7CFB;&#x5982;<strong>&#x56FE;17-1</strong>&#x6240;&#x793A;&#xFF09;&#xFF1A;</p>
+<p><img src="../../assets/1575281000033.png" alt=""></p>
+<p><strong>Thrift Client</strong></p>
+<p>Hive&#x670D;&#x52A1;&#x5668;&#x66B4;&#x9732;&#x4E3A;&#x4E00;&#x4E2A;Thrift&#x670D;&#x52A1;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;&#x4EFB;&#x4F55;&#x652F;&#x6301;Thrift&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E0E;&#x5B83;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</p>
+<p><strong>JDBC Driver</strong></p>
+<p>Hive&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;Type 4 &#xFF08;&#x7EAF;Java&#xFF09;&#x7684;JDBC driver&#xFF0C;&#x5B9A;&#x4E49;&#x5728;&#x7C7B;<em>org.apache.hadoop.hive.jdbc.HiveDirver</em>&#x4E2D;&#x3002;&#x5F53;&#x7528;&#x683C;&#x5F0F;&#x4E3A;<em>jdbc:hive2://host:port/dbname</em>&#x7684;JDBC URI&#x914D;&#x7F6E;&#x65F6;&#xFF0C;java&#x5E94;&#x7528;&#x80FD;&#x5728;&#x6307;&#x5B9A;&#x7684;host&#x548C;port&#x8FDE;&#x63A5;&#x5230;&#x8FD0;&#x884C;&#x5728;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;Hive server&#x3002;&#xFF08;driver&#x8C03;&#x7528;Hive Thrift Client&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#xFF09;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;URI <em>jdbc:hive2://</em>&#x901A;&#x8FC7;&#x5D4C;&#x5165;&#x6A21;&#x5F0F;&#x7684;JDBC&#x8FDE;&#x63A5;&#x5230;Hive&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;Hive&#x8FD0;&#x884C;&#x5728;&#x4E0E;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x5E94;&#x7528;&#x76F8;&#x540C;&#x7684;JVM&#x4E2D;&#xFF1B;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x5355;&#x72EC;&#x542F;&#x52A8;Hive server&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;Thrift&#x670D;&#x52A1;&#x6216;&#x8005;Hive Thrift Client&#x3002;</p>
+<p>Beeline CLI&#x4F7F;&#x7528;JDBC driver&#x4E0E;Hive&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;</p>
+<p><strong>ODBC driver</strong></p>
+<p>ODBC driver&#x80FD;&#x591F;&#x8BA9;&#x652F;&#x6301;ODBC&#x534F;&#x8BAE;&#x7684;&#x5E94;&#x7528;&#xFF08;&#x6BD4;&#x5982;&#x5546;&#x4E1A;&#x667A;&#x80FD;&#x8F6F;&#x4EF6;&#xFF09;&#x8FDE;&#x63A5;&#x5230;Hive&#x3002;Apache Hive&#x53D1;&#x884C;&#x7248;&#x672C;&#x4E0D;&#x9644;&#x5E26;ODBC driver&#xFF0C;&#x4F46;&#x662F;&#x67D0;&#x4E9B;&#x652F;&#x6301;&#x8005;&#x63D0;&#x4F9B;&#x4E86;ODBC driver&#x3002;&#xFF08;&#x4E0E;JDBC driver&#x7C7B;&#x4F3C;&#xFF0C;ODBC driver&#x4F7F;&#x7528;Thrift&#x4E0E;Hive server&#x901A;&#x4FE1;&#xFF09;</p>
+<h3 id="43&#x3001;the-metastore">4.3&#x3001;The Metastore</h3>
+<p>metastore&#x662F;Hive&#x5143;&#x6570;&#x636E;&#x7684;&#x4E2D;&#x592E;&#x4ED3;&#x5E93;&#xFF08;central repository&#xFF09;&#x3002;metastore&#x88AB;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x5757;&#xFF1A;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x548C;Hive&#x5143;&#x6570;&#x636E;&#x7684;&#x5907;&#x4EFD;&#x5B58;&#x50A8;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;metastore&#x670D;&#x52A1;&#x8FD0;&#x884C;&#x5728;&#x4E0E;Hive&#x670D;&#x52A1;&#x76F8;&#x540C;&#x7684;JVM&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x7684;&#x4F4D;&#x4E8E;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x7684;Derby&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;&#x3002;&#x8FD9;&#x53EB;&#x4F5C;&#x5185;&#x7F6E;metastore&#xFF08;<em><strong>embedded metastore</strong></em>&#xFF09;&#x914D;&#x7F6E;&#xFF0C;&#x5982;<strong>&#x56FE;17-2</strong>&#x3002;</p>
+<p>&#x4F7F;&#x7528;embedded metastore&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x4E00;&#x6B21;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x7684;Derby&#x6570;&#x636E;&#x5E93;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;Hive&#x4F1A;&#x8BDD;&#x80FD;&#x8BBF;&#x95EE;&#x76F8;&#x540C;&#x7684;metastore&#x3002;&#x5982;&#x679C;&#x5C1D;&#x8BD5;&#x6253;&#x5F00;&#x7B2C;&#x4E8C;&#x4E2A;&#x4F1A;&#x8BDD;&#xFF0C;&#x5219;&#x4F1A;&#x5728;&#x6253;&#x5F00;metastore&#x8FDE;&#x63A5;&#x65F6;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x3002;</p>
+<p><img src="../../assets/1575289044638.png" alt=""></p>
+<p>&#x652F;&#x6301;&#x591A;&#x4E2A;&#x4F1A;&#x8BDD;&#xFF08;&#x591A;&#x4E2A;&#x7528;&#x6237;&#xFF09;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x662F;&#xFF0C;&#x4F7F;&#x7528;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#x7684;&#x6570;&#x636E;&#x5E93;&#x3002;&#x8FD9;&#x79CD;&#x914D;&#x7F6E;&#x65B9;&#x6848;&#x53EB;&#x4F5C;&#x672C;&#x5730;metastore&#xFF08;<em><strong>local metastore</strong></em>&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;metastore&#x670D;&#x52A1;&#x4ECD;&#x7136;&#x8FD0;&#x884C;&#x5728;&#x4E0E;Hive&#x670D;&#x52A1;&#x76F8;&#x540C;&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8FD0;&#x884C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#xFF08;&#x53EF;&#x4EE5;&#x5728;&#x76F8;&#x540C;&#x673A;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x8FDC;&#x7A0B;&#x673A;&#x5668;&#xFF09;&#x3002;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;<strong>&#x8868;17-1</strong>&#x4E2D;&#x7684;<em>javax.jdo.option.*</em>&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x652F;&#x6301;JDBC&#x7684;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<h6 id="&#x8868;-17-1important-metastore-configuration-properties">&#x8868; 17-1.Important metastore configuration properties</h6>
+<table>
+<thead>
+<tr>
+<th>Property name</th>
+<th>Type</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hive.metastore.warehouse.dir</td>
+<td>URI</td>
+<td>/user/hive/warehouse</td>
+<td>&#x76F8;&#x5BF9;&#x4E8E;fs.defaultFS&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x4FDD;&#x5B58;&#x7BA1;&#x7406;&#x7684;Hive&#x8868;</td>
+</tr>
+<tr>
+<td>hive.metastore.uris</td>
+<td>&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;URIs</td>
+<td>&#x672A;&#x8BBE;&#x7F6E;</td>
+<td>&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x8FDB;&#x7A0B;&#x4E2D;metastore&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x901A;&#x8FC7;URIs&#x6307;&#x5B9A;&#x7684;&#x8FDC;&#x7A0B;metastores&#x3002;&#x5F53;&#x6709;&#x591A;&#x4E2A;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4EE5;&#x8F6E;&#x8BE2;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x3002;</td>
+</tr>
+<tr>
+<td>javax.jdo.option.ConnectionURL</td>
+<td>URI</td>
+<td>jdbc:derby:;databaseName=metastore_db;create=true</td>
+<td>metastore&#x6570;&#x636E;&#x5E93;&#x7684;JDBC URL</td>
+</tr>
+<tr>
+<td>javax.jdo.option.ConnectionDriverName</td>
+<td>String</td>
+<td>org.apache.derby.jdbc.EmbeddedDriver</td>
+<td>JDBC&#x9A71;&#x52A8;&#x5668;&#x7C7B;&#x540D;</td>
+</tr>
+<tr>
+<td>javax.jdo.option.ConnectionUserName</td>
+<td>String</td>
+<td>App</td>
+<td>JDBC&#x7528;&#x6237;&#x540D;</td>
+</tr>
+<tr>
+<td>javax.jdo.option.ConnectionPassword</td>
+<td>String</td>
+<td>mine</td>
+<td>JDBC&#x5BC6;&#x7801;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5BF9;&#x4E8E;&#x72EC;&#x7ACB;&#x7684;metastore MySQL&#x662F;&#x4E00;&#x4E2A;&#x6D41;&#x884C;&#x7684;&#x9009;&#x62E9;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<em>javax.jdo.option.ConnectionURL</em>&#x5C5E;&#x6027;&#x4E3A;<em>jdbc:mysql://host/dbname?createDatabaseIfNotExist=true</em>&#xFF0C;<em>javax.jdo.option.ConnectionDriverName</em>&#x5C5E;&#x6027;&#x4E3A;<em>com.mysql.jdbc.Driver</em>&#x3002;MySQL&#x7684;JDBC dirver JAR&#x6587;&#x4EF6;&#x5FC5;&#x987B;&#x5728;Hive&#x7684;classpath&#x4E2D;&#xFF0C;&#x628A;&#x5B83;&#x653E;&#x5728;Hive&#x7684;<em>lib</em>&#x76EE;&#x5F55;&#x4E2D;&#x5C31;&#x884C;&#x4E86;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x79CD;metastore&#x914D;&#x7F6E;&#x53EB;&#x4F5C;<em><strong>remote metastore</strong></em>&#xFF0C;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;metastore&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;&#x5728;&#x4E0E;Hive&#x670D;&#x52A1;&#x4E0D;&#x540C;&#x7684;JVM&#x4E2D;&#x3002;&#x8FD9;&#x80FD;&#x591F;&#x5E26;&#x6765;&#x66F4;&#x597D;&#x5730;&#x53EF;&#x7BA1;&#x7406;&#x6027;&#x548C;&#x5B89;&#x5168;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x5C42;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x5730;&#x901A;&#x8FC7;&#x9632;&#x706B;&#x5899;&#x9694;&#x79BB;&#xFF0C;&#x5E76;&#x4E14;&#x5BA2;&#x6237;&#x7AEF;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8BC1;&#x4E66;&#x3002;</p>
+<p>&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;<em>hive.metastore.uris</em>&#x4E3A;metastore&#x670D;&#x52A1;&#x5668;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;URIs&#xFF0C;Hive&#x670D;&#x52A1;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x4F7F;&#x7528;remote metasotre&#x3002;metastore&#x670D;&#x52A1;&#x5668;URS&#x683C;&#x5F0F;&#x4E3A;<em>thrift://host:port</em>&#xFF0C;port&#x5BF9;&#x5E94;&#x4E8E;&#x542F;&#x52A8;metastore&#x670D;&#x52A1;&#x5668;&#x65F6;&#x901A;&#x8FC7;<strong>METASTORE_PORT</strong>&#x8BBE;&#x7F6E;&#x7684;&#x7AEF;&#x53E3;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ru-men.html" class="navigation navigation-prev " aria-label="Previous page: 安装Hive">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="hiveql.html" class="navigation navigation-next " aria-label="Next page: HiveQL">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"运行Hive","level":"1.5.6.2","depth":3,"next":{"title":"HiveQL","level":"1.5.6.3","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.md","articles":[]},"previous":{"title":"安装Hive","level":"1.5.6.1","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","mtime":"2020-07-14T08:26:21.568Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-04T10:00:27.200Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

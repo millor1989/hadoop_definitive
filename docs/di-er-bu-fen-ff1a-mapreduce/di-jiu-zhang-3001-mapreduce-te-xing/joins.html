@@ -1,0 +1,1512 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>连接、副数据分发、MapReduce库类 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html" />
+    
+    
+    <link rel="prev" href="sorting.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    扉页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu.html">
+            
+                    
+                    第一部分：Hadoop基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-yi-zhang-3001-chu-shi-hadoop.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-yi-zhang-3001-chu-shi-hadoop.html">
+            
+                    
+                    第一章、初识Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-er-zhang-3001-mapreduce.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-er-zhang-3001-mapreduce.html">
+            
+                    
+                    第二章、MapReduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs.html">
+            
+                    
+                    第三章、HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/ji-chu-gai-nian.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/ji-chu-gai-nian.html">
+            
+                    
+                    HDFS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou.html">
+            
+                    
+                    Java接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/du-xie.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/du-xie.html">
+            
+                    
+                    读写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/cha-xun.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/cha-xun.html">
+            
+                    
+                    查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/shan.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/javajie-kou/shan.html">
+            
+                    
+                    删
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/shu-ju-liu.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/shu-ju-liu.html">
+            
+                    
+                    数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/bing-xing-fu-zhi-ff08-distcp.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-san-zhang-3001-hdfs/bing-xing-fu-zhi-ff08-distcp.html">
+            
+                    
+                    并行复制（distcp）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn.html">
+            
+                    
+                    第四章、YARN
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarnji-chu.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarnji-chu.html">
+            
+                    
+                    YARN基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yu-mapreduce-1-bi-jiao.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yu-mapreduce-1-bi-jiao.html">
+            
+                    
+                    与MapReduce 1比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarndiao-du.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-si-zhang-3001-yarn/yarndiao-du.html">
+            
+                    
+                    YARN调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o.html">
+            
+                    
+                    第五章、Hadoop I/O
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/shu-ju-wan-zheng-xing-he-ya-suo.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/shu-ju-wan-zheng-xing-he-ya-suo.html">
+            
+                    
+                    数据完整性和压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua.html">
+            
+                    
+                    序列化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua/zi-ding-yi-writable.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/xu-lie-hua/zi-ding-yi-writable.html">
+            
+                    
+                    自定义Writable和序列化框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/ji-yu-wen-jian-de-shu-ju-jie-gou.html">
+            
+                <a href="../../di-yi-bu-fen-ff1a-hadoop-ji-chu/di-wu-zhang-3001-hadoop-i-o/ji-yu-wen-jian-de-shu-ju-jie-gou.html">
+            
+                    
+                    基于文件的数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-er-bu-fen-ff1a-mapreduce.html">
+            
+                <a href="../../di-er-bu-fen-ff1a-mapreduce.html">
+            
+                    
+                    第二部分：MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-liu-zhang.html">
+            
+                <a href="../di-liu-zhang.html">
+            
+                    
+                    第六章、开发MapReduce应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../di-liu-zhang/pei-zhi-api.html">
+            
+                <a href="../di-liu-zhang/pei-zhi-api.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../di-liu-zhang/shi-yong-mrunit-xie-dan-yuan-ce-shi.html">
+            
+                <a href="../di-liu-zhang/shi-yong-mrunit-xie-dan-yuan-ce-shi.html">
+            
+                    
+                    测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../di-liu-zhang/yun-xing.html">
+            
+                <a href="../di-liu-zhang/yun-xing.html">
+            
+                    
+                    运行和调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../di-liu-zhang/diao-shi.html">
+            
+                <a href="../di-liu-zhang/diao-shi.html">
+            
+                    
+                    MapReduce工作流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../mapreduce.html">
+            
+                <a href="../mapreduce.html">
+            
+                    
+                    第七章、MapReduce如何工作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../mapreduce/mapreduce-jobyun-xing-pou-xi.html">
+            
+                <a href="../mapreduce/mapreduce-jobyun-xing-pou-xi.html">
+            
+                    
+                    运行与故障
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../mapreduce/shufflehe-sort.html">
+            
+                <a href="../mapreduce/shufflehe-sort.html">
+            
+                    
+                    混洗和分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../mapreduce/taskzhi-xing.html">
+            
+                <a href="../mapreduce/taskzhi-xing.html">
+            
+                    
+                    Task执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi.html">
+            
+                <a href="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi.html">
+            
+                    
+                    第八章、MapReduce类型和格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/mapreducelei-xing.html">
+            
+                <a href="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/mapreducelei-xing.html">
+            
+                    
+                    MapReduce类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-ru-ge-shi.html">
+            
+                <a href="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-ru-ge-shi.html">
+            
+                    
+                    输入格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-chu-ge-shi.html">
+            
+                <a href="../di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/shu-chu-ge-shi.html">
+            
+                    
+                    输出格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../di-jiu-zhang-3001-mapreduce-te-xing.html">
+            
+                <a href="../di-jiu-zhang-3001-mapreduce-te-xing.html">
+            
+                    
+                    第九章、MapReduce特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="counters.html">
+            
+                <a href="counters.html">
+            
+                    
+                    计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="sorting.html">
+            
+                <a href="sorting.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4.3" data-path="joins.html">
+            
+                <a href="joins.html">
+            
+                    
+                    连接、副数据分发、MapReduce库类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html">
+            
+                    
+                    第三部分：Hadoop操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.html">
+            
+                    
+                    第十章、配置一个Hadoop集群
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.html">
+            
+                    
+                    集群规范、集群设置及安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.html">
+            
+                    
+                    Hadoop配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.html">
+            
+                    
+                    安全、基准集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.html">
+            
+                    
+                    第十一章、管理Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.html">
+            
+                    
+                    HDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.html">
+            
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.html">
+            
+                    
+                    监控和维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-si-bu-fen-ff1a-related-projects.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects.html">
+            
+                    
+                    第四部分：Related Projects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../di-si-bu-fen-ff1a-related-projects/di-12-zhang-3001-avro.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-12-zhang-3001-avro.html">
+            
+                    
+                    第12章、Avro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../di-si-bu-fen-ff1a-related-projects/di-13-zhang-3001-parquet.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-13-zhang-3001-parquet.html">
+            
+                    
+                    第13章、Parquet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../di-si-bu-fen-ff1a-related-projects/di-14-zhang-3001-flume.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-14-zhang-3001-flume.html">
+            
+                    
+                    第14章、Flume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../di-si-bu-fen-ff1a-related-projects/di-15-zhang-3001-sqoop.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-15-zhang-3001-sqoop.html">
+            
+                    
+                    第15章、Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../di-si-bu-fen-ff1a-related-projects/di-16-zhang-3001-pig.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-16-zhang-3001-pig.html">
+            
+                    
+                    第16章、Pig
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive.html">
+            
+                    
+                    第17章、Hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.html">
+            
+                    
+                    安装Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.html">
+            
+                    
+                    运行Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.html">
+            
+                    
+                    HiveQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.html">
+            
+                    
+                    查询数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.html">
+            
+                    
+                    LanguageManualHive语言手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase.html">
+            
+                    
+                    第20章、HBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/ji-chu-gai-nian.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/ji-chu-gai-nian.html">
+            
+                    
+                    基础概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/hbase-versus-rdbms.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-20-zhang-3001-hbase/hbase-versus-rdbms.html">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper.html">
+            
+                    
+                    第21章、ZooKeeper
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.8.1" data-path="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperfu-wu.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperfu-wu.html">
+            
+                    
+                    ZooKeeper服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.2" data-path="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperde-shi-yong.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/zookeeperde-shi-yong.html">
+            
+                    
+                    ZooKeeper的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.3" data-path="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/sheng-chan-huan-jing-zhong-de-zookeeper.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/di-21-zhang-3001-zookeeper/sheng-chan-huan-jing-zhong-de-zookeeper.html">
+            
+                    
+                    生产环境中的ZooKeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../di-si-bu-fen-ff1a-related-projects/oozie.html">
+            
+                <a href="../../di-si-bu-fen-ff1a-related-projects/oozie.html">
+            
+                    
+                    Oozie
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >连接、副数据分发、MapReduce库类</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="3&#x3001;joins">3&#x3001;Joins</h2>
+<p>MapReduce&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5927;&#x6570;&#x636E;&#x96C6;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x5199;&#x8FDE;&#x63A5;&#x7684;&#x4EE3;&#x7801;&#x76F8;&#x5F53;&#x590D;&#x6742;&#x3002;&#x6240;&#x4EE5;&#x4E0D;&#x5E94;&#x8BE5;&#x5199;MapReduce&#x7A0B;&#x5E8F;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x4F18;&#x5148;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x9AD8;&#x7EA7;&#x6846;&#x67B6;&#x5982;Pig&#x3001;Hive&#x3001;Cascading&#x3001;Cruc&#x6216;&#x8005;Spark&#xFF0C;&#x5728;&#x5B83;&#x4EEC;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#x8FDE;&#x63A5;&#x64CD;&#x4F5C;&#x662F;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x5047;&#x5982;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x2014;&#x2014;&#x6C14;&#x8C61;&#x7AD9;&#x6570;&#x636E;&#x548C;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#x2014;&#x2014;&#x60F3;&#x8981;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x3002;&#x6216;&#x8005;&#xFF0C;&#x60F3;&#x8981;&#x67E5;&#x770B;&#x6BCF;&#x4E2A;&#x6C14;&#x8C61;&#x7AD9;&#x7684;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x6761;&#x8F93;&#x51FA;&#x8BB0;&#x5F55;&#x90FD;&#x5305;&#x542B;&#x6C14;&#x8C61;&#x7AD9;&#x7684;&#x5143;&#x6570;&#x636E;&#x3002;&#x5982;&#x56FE;9-2&#x6240;&#x793A;&#xFF1A;</p>
+<h6 id="&#x56FE;9-2inner-join-of-two-datasets">&#x56FE;9-2.Inner join of two datasets</h6>
+<p><img src="../../assets/1573648890281.png" alt=""></p>
+<p>&#x8981;&#x6839;&#x636E;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x6570;&#x636E;&#x96C6;&#x5206;&#x533A;&#x51B3;&#x5B9A;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x8FDE;&#x63A5;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x5F88;&#x5927;&#xFF08;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#xFF09;&#x4F46;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#xFF0C;&#x5C0F;&#x5230;&#x80FD;&#x591F;&#x5206;&#x53D1;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#xFF08;&#x50CF;&#x6C14;&#x8C61;&#x7AD9;&#x5143;&#x6570;&#x636E;&#xFF09;&#xFF0C;&#x8FDE;&#x63A5;&#x4F1A;&#x88AB;&#x5C06;&#x6BCF;&#x4E2A;&#x6C14;&#x8C61;&#x7AD9;&#x6570;&#x636E;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x8D77;&#xFF08;&#x4F8B;&#x5982;&#x57FA;&#x4E8E;&#x6C14;&#x8C61;&#x7AD9;ID&#x7684;&#x90E8;&#x5206;&#x6392;&#x5E8F;&#xFF09;&#x7684;MapReduce&#x5F71;&#x54CD;&#x3002;mapper&#x6216;&#x8005;reducer&#x4F7F;&#x7528;&#x8F83;&#x5C0F;&#x7684;&#x6570;&#x636E;&#x96C6;&#x4E3A;&#x67D0;&#x4E2A;&#x6C14;&#x8C61;&#x7AD9;ID&#x67E5;&#x627E;&#x5BF9;&#x5E94;&#x7684;&#x6C14;&#x8C61;&#x7AD9;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#x5199;&#x51FA;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x7531;mapper&#x6267;&#x884C;&#xFF0C;&#x5B83;&#x53EB;&#x505A;<em>map-side join</em>&#xFF0C;&#x800C;&#x7531;reducer&#x6267;&#x884C;&#x7684;&#x8FDE;&#x63A5;&#x53EB;&#x505A;<em>reduce-side join</em>&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x90FD;&#x975E;&#x5E38;&#x5927;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x5C06;&#x67D0;&#x4E00;&#x4E2A;&#x590D;&#x5236;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6570;&#x636E;&#x7684;&#x6784;&#x9020;&#x4F7F;&#x7528;MapReduce&#x7684;map-side&#x6216;&#x8005;reduce-side&#x8FDE;&#x63A5;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x7528;&#x6237;&#x6570;&#x636E;&#x5E93;&#x548C;&#x67D0;&#x4E9B;&#x7528;&#x6237;&#x6D3B;&#x52A8;&#x65E5;&#x5FD7;&#xFF08;&#x4F8B;&#x5982;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#xFF09;&#x3002;&#x5BF9;&#x4E8E;&#x6D41;&#x884C;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x5C06;&#x7528;&#x6237;&#x6570;&#x636E;&#x5E93;&#xFF08;&#x6216;&#x8005;&#x65E5;&#x5FD7;&#xFF09;&#x5206;&#x5E03;&#x5230;&#x6240;&#x6709;&#x7684;MapReduce&#x8282;&#x70B9;&#x662F;&#x4E0D;&#x53EF;&#x884C;&#x7684;&#x3002;</p>
+<h3 id="31&#x3001;map-side-joins">3.1&#x3001;Map-Side Joins</h3>
+<p>&#x5927;&#x6570;&#x636E;&#x96C6;&#x7684;map-side&#x8FDE;&#x63A5;&#x901A;&#x8FC7;&#x5728;&#x6570;&#x636E;&#x5230;&#x8FBE;map&#x51FD;&#x6570;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x8FDE;&#x63A5;&#x5B9E;&#x73B0;&#x3002;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x8FD0;&#x884C;&#x8FDE;&#x63A5;&#xFF0C;&#x6BCF;&#x4E2A;map&#x7684;&#x8F93;&#x5165;&#x5FC5;&#x987B;&#x4EE5;&#x7279;&#x5B9A;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x5206;&#x533A;&#x548C;&#x6392;&#x5E8F;&#x3002;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x6570;&#x636E;&#x96C6;&#x5FC5;&#x987B;&#x5212;&#x5206;&#x4E3A;&#x76F8;&#x540C;&#x6570;&#x91CF;&#x7684;&#x5206;&#x533A;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x4E2D;&#x6309;&#x7167;&#x76F8;&#x540C;&#x7684;&#x952E;&#xFF08;&#x8FDE;&#x63A5;&#x952E;&#xFF09;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;&#x7279;&#x5B9A;&#x952E;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#x5FC5;&#x987B;&#x5728;&#x76F8;&#x540C;&#x7684;&#x5206;&#x533A;&#x4E2D;&#x3002;&#x8FD9;&#x4F3C;&#x4E4E;&#x662F;&#x4E00;&#x4E2A;&#x4E25;&#x683C;&#x7684;&#x9700;&#x6C42;&#xFF08;&#x7684;&#x786E;&#x662F;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x4E8B;&#x5B9E;&#x4E0A;&#x7B26;&#x5408;MapReduce job&#x8F93;&#x51FA;&#x7684;&#x63CF;&#x8FF0;&#x3002;</p>
+<p>map-side&#x8FDE;&#x63A5;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x8FDE;&#x63A5;&#x51E0;&#x4E2A;job&#xFF08;&#x6709;&#x76F8;&#x540C;&#x6570;&#x91CF;&#x7684;reducers&#x548C;&#x76F8;&#x540C;&#x7684;&#x952E;&#xFF0C;&#x5E76;&#x4E14;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x4E0D;&#x53EF;&#x5207;&#x5206;&#x2014;&#x2014;&#x56E0;&#x4E3A;&#x6BD4;&#x4E00;&#x4E2A;HDFS block&#x5C0F;&#x6216;&#x8005;&#x662F;gzip&#x683C;&#x5F0F;&#x538B;&#x7F29;&#x7684;&#xFF09;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x5728;&#x6C14;&#x8C61;&#x6570;&#x636E;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6839;&#x636E;&#x6C14;&#x8C61;&#x7AD9;ID&#x5BF9;&#x6C14;&#x8C61;&#x7AD9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x90E8;&#x5206;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#x4E0A;&#x8FDB;&#x884C;&#x7B49;&#x4EF7;&#x7684;&#x6392;&#x5E8F;&#xFF08;&#x4E5F;&#x6309;&#x7167;&#x6C14;&#x8C61;&#x7AD9;ID&#x5E76;&#x4E14;&#x6709;&#x76F8;&#x540C;&#x6570;&#x91CF;&#x7684;reducers&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x4E2A;&#x8F93;&#x51FA;&#x80FD;&#x591F;&#x6EE1;&#x8DB3;&#x8FD0;&#x884C;map-side&#x8FDE;&#x63A5;&#x7684;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<em>org.apache.hadoop.mapreduce.join</em>&#x5305;&#x4E2D;&#x7684;<strong>CompositeInputFormat</strong>&#x6765;&#x8FD0;&#x884C;map-side&#x8FDE;&#x63A5;&#x3002;<strong>CompositeInputFormat</strong>&#x7684;&#x8F93;&#x5165;&#x6E90;&#x548C;&#x8FDE;&#x63A5;&#x7C7B;&#x578B;&#xFF08;inner&#x6216;&#x8005;outer&#xFF09;&#x901A;&#x8FC7;&#x6839;&#x636E;&#x7B80;&#x5355;&#x8BED;&#x6CD5;&#x5199;&#x7684;join&#x8868;&#x8FBE;&#x5F0F;&#x6307;&#x5B9A;&#x3002;&#x5BF9;&#x5E94;&#x5305;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x8BF4;&#x660E;&#x548C;&#x4F8B;&#x5B50;&#x3002;</p>
+<p>&#x4F8B;&#x5B50;<strong>org.apache.hadoop.examples.Join</strong>&#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x7528;&#x4E8E;&#x8FD0;&#x884C;map-side&#x8FDE;&#x63A5;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x591A;&#x4E2A;&#x8F93;&#x5165;&#x4E3A;&#x4EFB;&#x4F55;&#x6307;&#x5B9A;&#x7684;mapper&#x548C;reducer&#x8FD0;&#x884C;&#x4E00;&#x4E2A;MapReduce job&#x3002;</p>
+<h3 id="32&#x3001;reduce-side-joins">3.2&#x3001;Reduce-Side Joins</h3>
+<p>reduce-side&#x8FDE;&#x63A5;&#x6BD4;map-side&#x8FDE;&#x63A5;&#x66F4;&#x4E3A;&#x666E;&#x904D;&#xFF0C;&#x56E0;&#x4E3A;&#x8F93;&#x5165;&#x6570;&#x636E;&#x96C6;&#x4E0D;&#x5FC5;&#x4EE5;&#x4EFB;&#x4F55;&#x7279;&#x5B9A;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x90FD;&#x5FC5;&#x987B;&#x5168;&#x90E8;&#x8FDB;&#x884C;MapReduce&#x6DF7;&#x6D17;&#x5BFC;&#x81F4;&#x5B83;&#x6BD4;&#x8F83;&#x4F4E;&#x6548;&#x3002;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;mapper&#x7528;&#x6570;&#x636E;&#x6E90;&#x6807;&#x8BB0;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x8FDE;&#x63A5;&#x952E;&#x4F5C;&#x4E3A;map&#x8F93;&#x51FA;&#x952E;&#xFF0C;&#x4EE5;&#x4FBF;&#x62E5;&#x6709;&#x76F8;&#x540C;&#x952E;&#x7684;&#x8BB0;&#x5F55;&#x4F1A;&#x88AB;&#x4E00;&#x8D77;&#x9001;&#x5230;reducer&#x3002;&#x5B9E;&#x8DF5;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ul>
+<li><p>Multiple inputs</p>
+<p>&#x6570;&#x636E;&#x96C6;&#x7684;&#x8F93;&#x5165;&#x6E90;&#x4E00;&#x822C;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;<strong>MultipleInputs</strong>&#x7C7B;&#x6765;&#x5206;&#x9694;&#x89E3;&#x6790;&#x548C;&#x6807;&#x8BB0;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x7684;&#x903B;&#x8F91;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x3002;</p>
+</li>
+<li><p>Secondary sort</p>
+<p>reducer&#x4F1A;&#x770B;&#x5230;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x4E2D;&#x6709;&#x76F8;&#x540C;&#x952E;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4FDD;&#x8BC1;&#x4EE5;&#x7279;&#x5B9A;&#x7684;&#x987A;&#x5E8F;&#x5448;&#x73B0;&#x3002;&#x53EF;&#x662F;&#xFF0C;&#x4E3A;&#x4E86;&#x6267;&#x884C;&#x8FDE;&#x63A5;&#xFF0C;&#x8BA9;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x7684;&#x6570;&#x636E;&#x51FA;&#x73B0;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x7684;&#x6570;&#x636E;&#x4E4B;&#x524D;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x3002;&#x5BF9;&#x4E8E;&#x6C14;&#x8C61;&#x6570;&#x636E;&#x8FDE;&#x63A5;&#xFF0C;&#x6C14;&#x8C61;&#x7AD9;&#x8BB0;&#x5F55;&#x5FC5;&#x987B;&#x6BCF;&#x4E2A;&#x952E;&#x6240;&#x89C1;&#x503C;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x4EE5;&#x4FBF;reducer&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6C14;&#x8C61;&#x7AD9;&#x540D;&#x586B;&#x5145;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#x5E76;&#x4E14;&#x5C06;&#x5B83;&#x4EEC;&#x53D1;&#x51FA;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x628A;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4EE5;&#x4EFB;&#x4F55;&#x987A;&#x5E8F;&#x63A5;&#x6536;&#x8BB0;&#x5F55;&#x90FD;&#x662F;&#x53EF;&#x80FD;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x4EFB;&#x4F55;&#x5206;&#x7EC4;&#x5185;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x91CF;&#x90FD;&#x53EF;&#x80FD;&#x975E;&#x5E38;&#x5927;&#x5E76;&#x4E14;&#x8D85;&#x8FC7;reducer&#x53EF;&#x7528;&#x7684;&#x5185;&#x5B58;&#x91CF;&#xFF0C;&#x5E94;&#x8BE5;&#x628A;&#x6570;&#x636E;&#x907F;&#x514D;&#x7F13;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x6807;&#x8BB0;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x952E;&#xFF08;&#x5B58;&#x50A8;&#x6C14;&#x8C61;&#x7AD9;ID&#xFF09;&#x548C;&#x6807;&#x7B7E;&#x90FD;&#x4F7F;&#x7528;<strong>TextPair</strong>&#x3002;&#x5BF9;&#x6807;&#x7B7E;&#x503C;&#x7684;&#x552F;&#x4E00;&#x9700;&#x6C42;&#x662F;&#x5B83;&#x4EEC;&#x4EE5;&#x6C14;&#x8C61;&#x7AD9;&#x8BB0;&#x5F55;&#x4F18;&#x5148;&#x4E8E;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x6392;&#x5E8F;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6807;&#x8BB0;&#x6C14;&#x8C61;&#x7AD9;&#x8BB0;&#x5F55;&#x4E3A;0&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#x4E3A;1&#x5B9E;&#x73B0;&#x3002;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x7684;mapper&#x7C7B;&#x5982;<strong>&#x4F8B;9-9</strong>&#x548C;<strong>9-10</strong>&#x6240;&#x793A;&#xFF1A;</p>
+<h6 id="&#x4F8B;-9-9mapper-for-tagging-station-records-for-a-reduce-side-join">&#x4F8B; 9-9.Mapper for tagging station records for a reduce-side join</h6>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JoinStationMapper</span>
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">Mapper</span>&lt;<span class="hljs-title">LongWritable</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">TextPair</span>, <span class="hljs-title">Text</span>&gt; </span>{
+  <span class="hljs-keyword">private</span> NcdcStationMetadataParser parser = <span class="hljs-keyword">new</span> NcdcStationMetadataParser();
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">map</span><span class="hljs-params">(LongWritable key, Text value, Context context)</span>
+      <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+    <span class="hljs-keyword">if</span> (parser.parse(value)) {
+      context.write(<span class="hljs-keyword">new</span> TextPair(parser.getStationId(), <span class="hljs-string">&quot;0&quot;</span>),
+          <span class="hljs-keyword">new</span> Text(parser.getStationName()));
+    }
+  }
+}
+</code></pre>
+<p>&#x4F8B; 9-10.Mapper for tagging weather records for a reduce-side join</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JoinRecordMapper</span>
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">Mapper</span>&lt;<span class="hljs-title">LongWritable</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">TextPair</span>, <span class="hljs-title">Text</span>&gt; </span>{
+  <span class="hljs-keyword">private</span> NcdcRecordParser parser = <span class="hljs-keyword">new</span> NcdcRecordParser();
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">map</span><span class="hljs-params">(LongWritable key, Text value, Context context)</span>
+      <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+    parser.parse(value);
+    context.write(<span class="hljs-keyword">new</span> TextPair(parser.getStationId(), <span class="hljs-string">&quot;1&quot;</span>), value);
+  }
+
+}
+</code></pre>
+<p>reducer&#x77E5;&#x9053;&#x5B83;&#x4F1A;&#x5148;&#x63A5;&#x6536;&#x5230;&#x6C14;&#x8C61;&#x7AD9;&#x8BB0;&#x5F55;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4ECE;&#x503C;&#x4E2D;&#x83B7;&#x53D6;&#x5B83;&#x7684;&#x540D;&#x5B57;&#x5E76;&#x628A;&#x5B83;&#x4F5C;&#x4E3A;&#x6BCF;&#x6761;&#x8F93;&#x51FA;&#x8BB0;&#x5F55;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x5199;&#x51FA;&#xFF08;<strong>&#x4F8B;9-11</strong>&#xFF09;&#x3002;</p>
+<h6 id="&#x4F8B;-9-11reducer-for-joining-tagged-station-records-with-tagged-weather-records">&#x4F8B; 9-11.Reducer for joining tagged station records with tagged weather records</h6>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JoinReducer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Reducer</span>&lt;<span class="hljs-title">TextPair</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">Text</span>&gt; </span>{
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reduce</span><span class="hljs-params">(TextPair key, Iterable&lt;Text&gt; values, Context context)</span>
+      <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+    Iterator&lt;Text&gt; iter = values.iterator();
+    Text stationName = <span class="hljs-keyword">new</span> Text(iter.next());
+    <span class="hljs-keyword">while</span> (iter.hasNext()) {
+      Text record = iter.next();
+      Text outValue = <span class="hljs-keyword">new</span> Text(stationName.toString() + <span class="hljs-string">&quot;\t&quot;</span> + record.toString());
+      context.write(key.getFirst(), outValue);
+    }
+  }
+}
+</code></pre>
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5047;&#x8BBE;&#x5728;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6C14;&#x8C61;&#x7AD9;ID&#x4EC5;&#x5BF9;&#x5E94;&#x4E00;&#x6761;&#x6C14;&#x8C61;&#x7AD9;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x5982;&#x679C;&#x60C5;&#x51B5;&#x5E76;&#x975E;&#x5982;&#x6B64;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;<strong>TextPair</strong>&#x628A;&#x6807;&#x7B7E;&#x653E;&#x8FDB;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x4F7F;&#x4EE3;&#x7801;&#x53D8;&#x5F97;&#x901A;&#x7528;&#x3002;&#x7136;&#x540E;&#xFF0C;<em>reduce()</em>&#x65B9;&#x6CD5;&#x5C06;&#x80FD;&#x591F;&#x5206;&#x8FA8;&#x54EA;&#x4E9B;&#x6761;&#x76EE;&#x662F;&#x6C14;&#x8C61;&#x7AD9;&#x540D;&#x79F0;&#x5E76;&#x4E14;&#x5728;&#x5904;&#x7406;&#x6C14;&#x8C61;&#x8BB0;&#x5F55;&#x4E4B;&#x524D;&#x68C0;&#x6D4B;&#xFF08;&#x548C;&#x5904;&#x7406;&#xFF09;&#x4E22;&#x5931;&#x6216;&#x8005;&#x91CD;&#x590D;&#x7684;&#x6761;&#x76EE;&#x3002;</p>
+<p>&#x8B66;&#x544A;&#xFF1A;&#x56E0;&#x4E3A;&#xFF08;&#x4E3A;&#x4E86;&#x9AD8;&#x6548;&#x7684;&#x76EE;&#x5F55;&#xFF09;reducer&#x4E2D;&#x503C;&#x7684;&#x904D;&#x5386;&#x5668;&#x5BF9;&#x8C61;&#x662F;&#x91CD;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x590D;&#x5236;&#x4ECE;&#x503C;&#x904D;&#x5386;&#x5668;&#x83B7;&#x53D6;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;<strong>Text</strong>&#x5BF9;&#x8C61;&#x5F88;&#x91CD;&#x8981;&#xFF1A;</p>
+<pre><code class="lang-java">Text stationName = <span class="hljs-keyword">new</span> Text(iter.next());
+</code></pre>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F5C;&#x8FD9;&#x4E2A;&#x590D;&#x5236;&#xFF0C;&#x5F53;&#x5C06;<em>stationName</em>&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;<em>stationName</em>&#x5F15;&#x7528;&#x4F1A;&#x6307;&#x5411;&#x521A;&#x521A;&#x8BFB;&#x53D6;&#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;bug&#x3002;</p>
+<p>&#x5B8C;&#x6574;&#x7684;&#x9A71;&#x52A8;&#x7C7B;&#x5982;<strong>&#x4F8B;9-12</strong>&#xFF0C;&#x5173;&#x952E;&#x70B9;&#x662F;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Partitioner&#xFF08;KeyPartitioner&#xFF09;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5206;&#x7EC4;comparator&#xFF08;FirstComparator&#xFF09;&#x57FA;&#x4E8E;&#x952E;&#x7684;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#xFF08;&#x6C14;&#x8C61;&#x7AD9;ID&#xFF09;&#x8FDB;&#x884C;&#x5206;&#x533A;&#x548C;&#x5206;&#x7EC4;&#x3002;</p>
+<h6 id="&#x4F8B;-9-12application-to-join-weather-records-with-station-names">&#x4F8B; 9-12.Application to join weather records with station names</h6>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JoinRecordWithStationName</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Configured</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Tool</span> </span>{
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KeyPartitioner</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Partitioner</span>&lt;<span class="hljs-title">TextPair</span>, <span class="hljs-title">Text</span>&gt; </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getPartition</span><span class="hljs-params">(<span class="hljs-comment">/*[*/</span>TextPair key<span class="hljs-comment">/*]*/</span>, Text value, <span class="hljs-keyword">int</span> numPartitions)</span> </span>{
+      <span class="hljs-keyword">return</span> (<span class="hljs-comment">/*[*/</span>key.getFirst().hashCode()<span class="hljs-comment">/*]*/</span> &amp; Integer.MAX_VALUE) % numPartitions;
+    }
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">run</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    <span class="hljs-keyword">if</span> (args.length != <span class="hljs-number">3</span>) {
+      JobBuilder.printUsage(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;&lt;ncdc input&gt; &lt;station input&gt; &lt;output&gt;&quot;</span>);
+      <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+    }
+
+    Job job = <span class="hljs-keyword">new</span> Job(getConf(), <span class="hljs-string">&quot;Join weather records with station names&quot;</span>);
+    job.setJarByClass(getClass());
+
+    Path ncdcInputPath = <span class="hljs-keyword">new</span> Path(args[<span class="hljs-number">0</span>]);
+    Path stationInputPath = <span class="hljs-keyword">new</span> Path(args[<span class="hljs-number">1</span>]);
+    Path outputPath = <span class="hljs-keyword">new</span> Path(args[<span class="hljs-number">2</span>]);
+
+    MultipleInputs.addInputPath(job, ncdcInputPath,
+        TextInputFormat.class, JoinRecordMapper.class);
+    MultipleInputs.addInputPath(job, stationInputPath,
+        TextInputFormat.class, JoinStationMapper.class);
+    FileOutputFormat.setOutputPath(job, outputPath);
+
+    <span class="hljs-comment">/*[*/</span>job.setPartitionerClass(KeyPartitioner.class);
+    job.setGroupingComparatorClass(TextPair.FirstComparator.class);<span class="hljs-comment">/*]*/</span>
+
+    job.setMapOutputKeyClass(TextPair.class);
+
+    job.setReducerClass(JoinReducer.class);
+
+    job.setOutputKeyClass(Text.class);
+
+    <span class="hljs-keyword">return</span> job.waitForCompletion(<span class="hljs-keyword">true</span>) ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    <span class="hljs-keyword">int</span> exitCode = ToolRunner.run(<span class="hljs-keyword">new</span> JoinRecordWithStationName(), args);
+    System.exit(exitCode);
+  }
+}
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code>011990-99999    SIHCCAJAVRI                     0067011990999991950051507004...
+011990-99999    SIHCCAJAVRI                     0043011990999991950051512004...
+011990-99999    SIHCCAJAVRI                     0043011990999991950051518004...
+012650-99999    TYNSET-HANSMOEN                 0043012650999991949032412004...
+012650-99999    TYNSET-HANSMOEN                 0043012650999991949032418004...
+</code></pre><h2 id="4&#x3001;side-data-distribution">4&#x3001;Side Data Distribution</h2>
+<p>&#x526F;&#x6570;&#x636E;&#xFF08;Side data&#xFF09;&#x53EF;&#x4EE5;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;job&#x9700;&#x8981;&#x7684;&#x7528;&#x6765;&#x5904;&#x7406;&#x4E3B;&#x6570;&#x636E;&#x96C6;&#x7684;&#x989D;&#x5916;&#x7684;&#x53EA;&#x8BFB;&#x6570;&#x636E;&#x3002;&#x6311;&#x6218;&#x662F;&#x4F7F;&#x526F;&#x6570;&#x636E;&#xFF08;&#x4EE5;&#x4FBF;&#x6377;&#x548C;&#x9AD8;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#xFF09;&#x5BF9;&#x6240;&#x6709;&#x7684;&#xFF08;&#x5206;&#x5E03;&#x5728;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#xFF09;map&#x6216;reduce tasks&#x53EF;&#x7528;&#x3002;</p>
+<h3 id="41&#x3001;&#x4F7F;&#x7528;job&#x914D;&#x7F6E;&#xFF08;using-the-job-configuration&#xFF09;">4.1&#x3001;&#x4F7F;&#x7528;Job&#x914D;&#x7F6E;&#xFF08;Using the Job Configuration&#xFF09;</h3>
+<p>&#x4F7F;&#x7528;<strong>Configuration</strong>&#xFF08;&#x8001;&#x7684;MapReduce API&#x7684;<strong>JobConf</strong>&#xFF09;&#x7684;&#x5404;&#x79CD;<em>setter</em>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4EFB;&#x610F;&#x7684;&#x952E;&#x503C;&#x5BF9;job&#x914D;&#x7F6E;&#x3002;&#x5728;&#x9700;&#x8981;&#x5F80;tasks&#x4E2D;&#x4F20;&#x9012;&#x5C11;&#x91CF;&#x7684;&#x5143;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</p>
+<p>&#x5728;task&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<strong>Context</strong>&#x7684;<em>getConfiguration()</em>&#x65B9;&#x6CD5;&#x4ECE;&#x914D;&#x7F6E;&#x4E2D;&#x83B7;&#x53D6;&#x6240;&#x4F20;&#x9012;&#x7684;&#x6570;&#x636E;&#x3002;&#xFF08;&#x5728;&#x8001;&#x7684;API&#x4E2D;&#xFF0C;&#x7A0D;&#x5FAE;&#x6709;&#x70B9;&#x590D;&#x6742;&#xFF1A;&#x5728;mapper&#x6216;&#x8005;reducer&#x4E2D;&#x91CD;&#x5199;<em>configure()</em>&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4F20;&#x5165;&#x7684;<strong>JobConf</strong>&#x5BF9;&#x8C61;&#x7684;<em>getter</em>&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x4F20;&#x9012;&#x7684;&#x6570;&#x636E;&#x3002;&#x901A;&#x5E38;&#x505A;&#x6CD5;&#x662F;&#xFF0C;&#x628A;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;&#xFF08;instance field&#xFF09;&#x4E2D;&#x4EE5;&#x4FBF;&#x5728;map()&#x6216;reduce()&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x3002;&#xFF09;</p>
+<p>&#x901A;&#x5E38;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x8DB3;&#x4EE5;&#x7F16;&#x7801;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5904;&#x7406;&#x5E8F;&#x5217;&#x5316;&#xFF08;&#x5982;&#x679C;&#x6709;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x4E14;&#x8F6C;&#x56DE;&#x7684;&#x65E2;&#x5B58;&#x673A;&#x5236;&#xFF09;&#x6216;&#x8005;&#x4F7F;&#x7528;Hadoop&#x7684;<strong>Stringifier</strong>&#x7C7B;&#x3002;<strong>DefaultStringifier</strong>&#x4F7F;&#x7528;Hadoop&#x7684;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#x6765;&#x5E8F;&#x5217;&#x5316;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x4E0D;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x8F6C;&#x5316;&#x8D85;&#x8FC7;&#x51E0;KB&#x7684;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x7ED9;MapReduce&#x7EC4;&#x4EF6;&#x4E2D;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5E26;&#x6765;&#x538B;&#x529B;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x3001;application master&#x548C;task JVM&#x4F1A;&#x7ECF;&#x5E38;&#x53BB;&#x8BFB;job&#x914D;&#x7F6E;&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x628A;&#x6240;&#x6709;&#x914D;&#x7F6E;&#x8BFB;&#x53D6;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5373;&#x4F7F;&#x4E0D;&#x7528;&#x3002;</p>
+<h3 id="42&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#xFF08;distributed-cache&#xFF09;">4.2&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#xFF08;Distributed Cache&#xFF09;</h3>
+<p>&#x6BD4;&#x8D77;&#x628A;&#x526F;&#x6570;&#x636E;&#x5E8F;&#x5217;&#x5316;&#x5230;job&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;Hadoop&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x673A;&#x5236;&#x5206;&#x53D1;&#x6570;&#x636E;&#x96C6;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x5E76;&#x4E14;&#x5F53;tasks&#x8FD0;&#x884C;&#x65F6;&#x53CA;&#x65F6;&#x5F52;&#x6863;&#x5230;task&#x8282;&#x70B9;&#x6765;&#x8BA9;tasks&#x4F7F;&#x7528;&#x7684;&#x670D;&#x52A1;&#x3002;&#x4E3A;&#x4E86;&#x8282;&#x7701;&#x7F51;&#x7EDC;&#x5E26;&#x5BBD;&#xFF0C;&#x6BCF;&#x4E2A;job&#x4E00;&#x822C;&#x53EA;&#x5C06;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x4EFB;&#x4F55;&#x7279;&#x5B9A;&#x8282;&#x70B9;&#x4E00;&#x6B21;&#x3002;</p>
+<h4 id="421&#x3001;&#x4F7F;&#x7528;&#xFF08;usage&#xFF09;">4.2.1&#x3001;&#x4F7F;&#x7528;&#xFF08;Usage&#xFF09;</h4>
+<p>&#x5BF9;&#x4F7F;&#x7528;<strong>GenericOptionsParser</strong>&#x7684;&#x5DE5;&#x5177;&#xFF08;&#x5305;&#x62EC;<strong>GenericOptionsParser</strong>&#x3001;<strong>Tool</strong>&#x548C;<strong>ToolRunner</strong>&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x5C06;&#x8981;&#x5206;&#x53D1;&#x7684;&#x6587;&#x4EF6;&#x4EE5;&#x4E00;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;URIs&#x96C6;&#x5408;&#x7684;&#x5F62;&#x5F0F;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;<strong><em>-files</em></strong>&#x9009;&#x9879;&#x3002;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;&#x5728;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3001;HDFS&#x6216;&#x5176;&#x5B83;Hadoop&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;&#x4F8B;&#x5982;S3&#xFF09;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;schema&#xFF0C;&#x4F1A;&#x5047;&#x8BBE;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF08;&#x5373;&#x4F7F;&#x9ED8;&#x8BA4;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0D;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF09;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<strong><em>-archives</em></strong>&#x9009;&#x9879;&#xFF0C;&#x590D;&#x5236;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#xFF08;archive files&#xFF09;&#xFF08;&#x4F8B;&#x5982;JAR&#x6587;&#x4EF6;&#x3001;ZIP&#x6587;&#x4EF6;&#x3001;tar&#x6587;&#x4EF6;&#x548C;gzipped tar&#x6587;&#x4EF6;&#xFF09;&#x5230;tasks&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x5728;task&#x8282;&#x70B9;&#x4E0A;&#x672A;&#x5F52;&#x6863;&#x7684;&#xFF08;unarchive&#xFF09;&#x3002;<strong><em>-libjars</em></strong>&#x9009;&#x9879;&#x4F1A;&#x5C06;JAR&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;mapper&#x548C;reducer tasks&#x7684;classpath&#x3002;&#x5982;&#x679C;job JAR&#x6587;&#x4EF6;&#x4E2D;&#x6CA1;&#x6709;&#x7ED1;&#x5B9A;&#x5E93;JAR&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x5206;&#x6790;&#x4E00;&#x4E2A;&#x6C14;&#x8C61;&#x7AD9;&#x540D;&#x79F0;&#x5143;&#x6570;&#x636E;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-shell">% hadoop jar hadoop-examples.jar \
+  MaxTemperatureByStationNameUsingDistributedCacheFile \
+  -files input/ncdc/metadata/stations-fixed-width.txt input/ncdc/all output
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x4F1A;&#x590D;&#x5236;&#x672C;&#x5730;&#x6587;&#x4EF6;<em>stations-fixed-width.txt</em>&#xFF08;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;schema&#xFF0C;&#x6240;&#x4EE5;&#x8DEF;&#x5F84;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF09;&#x5230;task&#x8282;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x67E5;&#x627E;&#x7AD9;&#x70B9;&#x540D;&#x79F0;&#xFF0C;&#x5982;<strong>&#x4F8B; 9-13</strong>&#xFF1A;</p>
+<h6 id="&#x4F8B;-9-13application-to-find-the-maximum-temperature-by-station&#xFF0C;showing-station-names-for-a-lookup-table-passed-as-a-distributed-cache-file">&#x4F8B; 9-13.Application to find the maximum temperature by station&#xFF0C;showing station names for a lookup table passed as a distributed cache file</h6>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MaxTemperatureByStationNameUsingDistributedCacheFile</span>
+  <span class="hljs-keyword">extends</span> <span class="hljs-title">Configured</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Tool</span> </span>{
+
+  <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StationTemperatureMapper</span>
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">Mapper</span>&lt;<span class="hljs-title">LongWritable</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">IntWritable</span>&gt; </span>{
+
+    <span class="hljs-keyword">private</span> NcdcRecordParser parser = <span class="hljs-keyword">new</span> NcdcRecordParser();
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">map</span><span class="hljs-params">(LongWritable key, Text value, Context context)</span>
+        <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+
+      parser.parse(value);
+      <span class="hljs-keyword">if</span> (parser.isValidTemperature()) {
+        context.write(<span class="hljs-keyword">new</span> Text(parser.getStationId()),
+            <span class="hljs-keyword">new</span> IntWritable(parser.getAirTemperature()));
+      }
+    }
+  }
+
+  <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MaxTemperatureReducerWithStationLookup</span>
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">Reducer</span>&lt;<span class="hljs-title">Text</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">IntWritable</span>&gt; </span>{
+
+    <span class="hljs-comment">/*[*/</span><span class="hljs-keyword">private</span> NcdcStationMetadata metadata;<span class="hljs-comment">/*]*/</span>
+
+    <span class="hljs-comment">/*[*/</span><span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">(Context context)</span>
+        <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+      metadata = <span class="hljs-keyword">new</span> NcdcStationMetadata();
+      metadata.initialize(<span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;stations-fixed-width.txt&quot;</span>));
+    }<span class="hljs-comment">/*]*/</span>
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reduce</span><span class="hljs-params">(Text key, Iterable&lt;IntWritable&gt; values,
+        Context context)</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+
+      <span class="hljs-comment">/*[*/</span>String stationName = metadata.getStationName(key.toString());<span class="hljs-comment">/*]*/</span>
+
+      <span class="hljs-keyword">int</span> maxValue = Integer.MIN_VALUE;
+      <span class="hljs-keyword">for</span> (IntWritable value : values) {
+        maxValue = Math.max(maxValue, value.get());
+      }
+      context.write(<span class="hljs-keyword">new</span> Text(<span class="hljs-comment">/*[*/</span>stationName<span class="hljs-comment">/*]*/</span>), <span class="hljs-keyword">new</span> IntWritable(maxValue));
+    }
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">run</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    Job job = JobBuilder.parseInputAndOutput(<span class="hljs-keyword">this</span>, getConf(), args);
+    <span class="hljs-keyword">if</span> (job == <span class="hljs-keyword">null</span>) {
+      <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+    }
+
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+
+    job.setMapperClass(StationTemperatureMapper.class);
+    job.setCombinerClass(MaxTemperatureReducer.class);
+    job.setReducerClass(MaxTemperatureReducerWithStationLookup.class);
+
+    <span class="hljs-keyword">return</span> job.waitForCompletion(<span class="hljs-keyword">true</span>) ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    <span class="hljs-keyword">int</span> exitCode = ToolRunner.run(
+        <span class="hljs-keyword">new</span> MaxTemperatureByStationNameUsingDistributedCacheFile(), args);
+    System.exit(exitCode);
+  }
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x6309;&#x7167;&#x6C14;&#x8C61;&#x7AD9;&#x67E5;&#x627E;&#x6700;&#x5927;&#x6E29;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;mapper&#xFF08;<strong>StationTemperatureMapper</strong>&#xFF09;&#x7B80;&#x5355;&#x5730;&#x53D1;&#x51FA;&#xFF08;&#x6C14;&#x8C61;&#x7AD9;ID&#xFF0C;&#x6E29;&#x5EA6;&#xFF09;&#x5BF9;&#x3002;&#x5BF9;&#x4E8E;combiner&#xFF0C;&#x91CD;&#x7528;<strong>MaxTemperatureReducer</strong>&#x6765;&#x5728;map&#x4FA7;&#x4ECE;&#x4EFB;&#x4F55;&#x7ED9;&#x5B9A;&#x5206;&#x7EC4;&#x7684;map&#x8F93;&#x51FA;&#x83B7;&#x53D6;&#x6700;&#x5927;&#x6E29;&#x5EA6;&#x3002;reducer&#xFF08;<strong>MaxTemperatureReducerWithStationLookup</strong>&#xFF09;&#x4E0E;combiner&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x4E3A;&#x9664;&#x4E86;&#x627E;&#x5230;&#x6700;&#x5927;&#x6E29;&#x5EA6;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x67E5;&#x627E;&#x7AD9;&#x70B9;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x4F7F;&#x7528;reducer&#x7684;<em>setup()</em>&#x65B9;&#x6CD5;&#x7528;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x7684;&#x539F;&#x59CB;&#x540D;&#x79F0;&#x6765;&#x83B7;&#x53D6;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;task&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8F93;&#x51FA;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>PEATS RIDGE WARATAH            372
+STRATHALBYN RACECOU            410
+SHEOAKS AWS                    399
+WANGARATTA AERO                409
+MOOGARA                        334
+MACKAY AERO                    331
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x590D;&#x5236;&#x4E0D;&#x80FD;&#x653E;&#x8FDB;&#x5185;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x9762;Hadoop map&#x6587;&#x4EF6;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x4EE5;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x67E5;&#x627E;&#x683C;&#x5F0F;&#x63D0;&#x4F9B;&#xFF08;serve as an on-disk lookup format&#xFF09;&#x3002;&#x56E0;&#x4E3A;map&#x6587;&#x4EF6;&#x662F;&#x5E26;&#x6709;&#x9650;&#x5B9A;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF08;defined directory structure&#xFF09;&#x7684;&#x6587;&#x4EF6;&#x96C6;&#x5408;&#xFF0C;&#x5E94;&#x8BE5;&#x628A;&#x5B83;&#x4EEC;&#x653E;&#x8FDB;&#x4E00;&#x4E2A;&#x5F52;&#x6863;&#x683C;&#x5F0F;&#xFF08;JAR&#x3001;ZIP&#x3001;tar&#x6216;&#x8005;gzipped tar&#xFF09;&#x5E76;&#x4E14;&#x4F7F;&#x7528;<strong><em>-archive</em></strong>&#x9009;&#x9879;&#x628A;&#x5B83;&#x4EEC;&#x52A0;&#x5230;&#x7F13;&#x5B58;&#x4E2D;&#x3002;</p>
+<h4 id="422&#x3001;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#xFF08;how-it-works&#xFF09;">4.2.2&#x3001;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#xFF08;How it works&#xFF09;</h4>
+<p>&#x542F;&#x52A8;job&#x65F6;&#xFF0C;Hadoop&#x590D;&#x5236;&#x901A;&#x8FC7;<strong><em>-archive</em></strong>&#x3001;<strong><em>-files</em></strong>&#x3001;<strong><em>-libjars</em></strong>&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x5230;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;&#x4E00;&#x822C;&#x662F;HDFS&#xFF09;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5728;task&#x8FD0;&#x884C;&#x524D;&#xFF0C;&#x8282;&#x70B9;&#x7BA1;&#x7406;&#x5668;&#x4ECE;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x5230;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x2014;&#x2014;&#x7F13;&#x5B58;&#x2014;&#x2014;&#x90A3;&#x4E48;task&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x8FD9;&#x662F;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x672C;&#x5730;&#x5316;&#x7684;&#xFF08;localized&#xFF09;&#x3002;&#x4ECE;task&#x7684;&#x89C6;&#x89D2;&#x6765;&#x8BF4;&#xFF0C;&#x6587;&#x4EF6;&#x5C31;&#x5728;&#x90A3;&#x91CC;&#xFF0C;&#x8C61;&#x5F81;&#x6027;&#x5730;&#x94FE;&#x63A5;&#x81EA;task&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;&#x6B64;&#x5916;&#xFF0C;<strong><em>-libjars</em></strong>&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x5728;task&#x542F;&#x52A8;&#x524D;&#x52A0;&#x5230;task&#x7684;classpath&#x3002;</p>
+<p>&#x8282;&#x70B9;&#x7BA1;&#x7406;&#x5668;&#x4E5F;&#x7EF4;&#x62A4;&#x7740;&#x4E00;&#x4E2A;&#xFF08;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x4E2D;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x7684;tasks&#x7684;&#x6570;&#x91CF;&#xFF09;&#x53C2;&#x8003;&#x8BA1;&#x6570;&#xFF08;reference count&#xFF09;&#x3002;task&#x8FD0;&#x884C;&#x524D;&#xFF0C;&#x6587;&#x4EF6;&#x53C2;&#x8003;&#x8BA1;&#x6570;&#x589E;&#x52A0;1&#xFF0C;&#x7136;&#x540E;&#xFF0C;task&#x8FD0;&#x884C;&#x540E;&#xFF0C;count&#x51CF;1&#x3002;&#x53EA;&#x6709;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x4E0D;&#x518D;&#x88AB;&#x4F7F;&#x7528;&#xFF08;&#x8BA1;&#x6570;&#x4E3A;0&#xFF09;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x8BA1;&#x6570;&#x3002;&#x5F53;&#x8282;&#x70B9;&#x7684;&#x7F13;&#x5B58;&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x5927;&#x5C0F;&#x2014;&#x2014;&#x9ED8;&#x8BA4;10GB&#x2014;&#x2014;&#x4F1A;&#x7528;&#x6700;&#x5C11;&#x6700;&#x8FD1;&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x5220;&#x9664;&#x7F13;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x6765;&#x4E3A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x8BA9;&#x51FA;&#x7A7A;&#x95F4;&#x3002;&#x7F13;&#x5B58;&#x9650;&#x5236;&#x5927;&#x5C0F;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x5C5E;&#x6027;<em>yarn.nodemanager.localizer.cache.target-size-mb</em>&#x6539;&#x53D8;&#x3002;</p>
+<p>&#x5C3D;&#x7BA1;&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x4E0D;&#x4FDD;&#x8BC1;&#x76F8;&#x540C;&#x8282;&#x70B9;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x76F8;&#x540C;job&#x7684;&#x540E;&#x7EED;tasks&#x80FD;&#x591F;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x627E;&#x5230;&#x5B83;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;job&#x7684;tasks&#x901A;&#x5E38;&#x88AB;&#x8C03;&#x5EA6;&#x4E3A;&#x5DEE;&#x4E0D;&#x591A;&#x540C;&#x65F6;&#x8FD0;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x673A;&#x4F1A;&#x56E0;&#x4E3A;&#x5176;&#x5B83;jobs&#x7684;&#x8FD0;&#x884C;&#x5BFC;&#x81F4;&#x539F;&#x59CB;task&#x7684;&#x6587;&#x4EF6;&#x88AB;&#x4ECE;&#x7F13;&#x5B58;&#x5220;&#x9664;&#x3002;</p>
+<h4 id="423&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;api&#xFF08;the-distributed-cache-api&#xFF09;">4.2.3&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;API&#xFF08;The distributed cache API&#xFF09;</h4>
+<p>&#x5927;&#x591A;&#x6570;&#x5E94;&#x7528;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;API&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x901A;&#x8FC7;<strong>GenericOptionsParser</strong>&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x3002;&#x53EF;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;<strong>GenericOptionsParser</strong>&#xFF0C;<strong>Job</strong>&#x4E2D;&#x7684;API&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x628A;&#x5BF9;&#x8C61;&#x653E;&#x8FDB;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x3002;&#x5982;&#x4E0B;&#x4E3A;<strong>Job</strong>&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addCacheFile</span><span class="hljs-params">(URI uri)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addCacheArchive</span><span class="hljs-params">(URI uri)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCacheFiles</span><span class="hljs-params">(URI[] files)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCacheArchives</span><span class="hljs-params">(URI[] archives)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addFileToClassPath</span><span class="hljs-params">(Path file)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addArchiveToClassPath</span><span class="hljs-params">(Path archive)</span>
+</span></code></pre>
+<p>&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x4E24;&#x7C7B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x653E;&#x5165;&#x7F13;&#x5B58;&#xFF1A;&#x6587;&#x4EF6;&#x548C;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#xFF08;archives&#xFF09;&#x3002;&#x5728;task&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x6587;&#x4EF6;&#x662F;&#x539F;&#x59CB;&#x7684;&#xFF0C;&#x800C;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x662F;&#x672A;&#x5F52;&#x6863;&#xFF08;&#x89E3;&#x5C01;&#xFF09;&#x7684;&#x3002;API&#x4ECB;&#x7ECD;&#x5982;<strong>&#x8868; 9-7</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Job API method</th>
+<th>GenericOptionsParser equivalent</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addCacheFile(URI uri) , setCacheFiles(URI[] files)</td>
+<td><strong>-files</strong> <em>file1,file2,...</em></td>
+<td>&#x628A;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x4EE5;&#x5907;&#x590D;&#x5236;&#x5230;task&#x8282;&#x70B9;</td>
+</tr>
+<tr>
+<td>addCacheArchive(URI uri) , setCacheArchives(URI[] files)</td>
+<td><strong>-archives</strong> <em>archive1,archive2,...</em></td>
+<td>&#x628A;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x4EE5;&#x5907;&#x590D;&#x5236;&#x5230;task&#x8282;&#x70B9;&#x5E76;&#x4E14;&#x5728;task&#x8282;&#x70B9;&#x89E3;&#x5C01;</td>
+</tr>
+<tr>
+<td>addFileToClassPath(Path file)</td>
+<td><strong>-libjars</strong> <em>jar1,jar2,...</em></td>
+<td>&#x628A;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x4EE5;&#x5907;&#x6DFB;&#x52A0;&#x5230;MapReduce task&#x7684;classpath&#x3002;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x5C01;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x662F;&#x628A;JAR&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;classpath&#x7684;&#x6709;&#x7528;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td>addArchiveToClassPath(Path archive)</td>
+<td><strong>None</strong></td>
+<td>&#x6DFB;&#x52A0;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x5230;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x4EE5;&#x5907;&#x89E3;&#x5C01;&#x5E76;&#x4E14;&#x6DFB;&#x52A0;&#x5230;MapReduce&#x7684;classpath&#x3002;&#x5F53;&#x8981;&#x628A;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x7684;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;classpath&#x65F6;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x62EC;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x7684;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x3002;&#x6216;&#x8005;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;JAR&#x6587;&#x4EF6;&#x5E76;&#x4F7F;&#x7528;<em>addFileToClassPath()</em>&#xFF0C;&#x8FD9;&#x4E5F;&#x6709;&#x7B49;&#x4EF7;&#x7684;&#x6548;&#x679C;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6CE8;&#x610F;&#xFF0C;add&#x6216;set&#x65B9;&#x6CD5;&#x6307;&#x5411;&#x7684;URIs&#x5FC5;&#x987B;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x5E76;&#x4E14;&#x5728;job&#x8FD0;&#x884C;&#x662F;&#x5B58;&#x5728;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x901A;&#x8FC7;<strong>GenericOptionParser</strong>&#x9009;&#x9879;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x6307;&#x5411;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x590D;&#x5236;&#x5230;&#x9ED8;&#x8BA4;&#x7684;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;&#x4E00;&#x822C;&#x662F;HDFS&#xFF09;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x4F7F;&#x7528;Java API&#x548C;&#x4F7F;&#x7528;<strong>GenericOptionParser</strong>&#x7684;&#x5173;&#x952E;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x4ECE;task&#x83B7;&#x53D6;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x4EE5;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x4F5C;&#xFF1A;&#x4F7F;&#x7528;&#x540D;&#x79F0;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x672C;&#x5730;&#x5316;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;<strong>&#x4F8B;9-13</strong>&#x3002;&#x8FD9;&#x80FD;&#x591F;&#x8FD0;&#x884C;&#x662F;&#x56E0;&#x4E3A;MapReduce&#x603B;&#x662F;&#x4F1A;&#x521B;&#x5EFA;&#x4ECE;task&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x5230;&#x6BCF;&#x4E2A;&#x6DFB;&#x52A0;&#x5230;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x7684;&#x8C61;&#x5F81;&#x6027;&#x94FE;&#x63A5;&#x3002;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x5C01;&#x4EE5;&#x4FBF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5D4C;&#x5957;&#x8DEF;&#x5F84;&#x8BBF;&#x95EE;&#x91CC;&#x9762;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="5&#x3001;mapreduce-library-classes">5&#x3001;MapReduce Library Classes</h2>
+<p>Hadoop&#x81EA;&#x5E26;&#x4E86;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x529F;&#x80FD;&#x7684;mappers&#x548C;reducers&#x7C7B;&#x5E93;&#x3002;&#x5982;<strong>&#x8868; 9-8</strong>:</p>
+<h6 id="&#x8868;-9-8mapreduce-library-classes">&#x8868; 9-8.MapReduce library classes</h6>
+<table>
+<thead>
+<tr>
+<th>Classes</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChainMapper, ChainReducer</td>
+<td>&#x5728;&#x4E00;&#x4E2A;mapper&#x4E2D;&#x548C;&#x4E00;&#x4E2A;reducer&#x4E2D;&#x5206;&#x522B;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;mapper&#x94FE;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E00;&#x4E2A;reducer&#x4E2D;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;mapper&#x94FE;&#x3002;&#xFF08;&#x7B26;&#x53F7;&#x8868;&#x793A;&#xFF1A;<strong>M+RM*</strong>&#xFF0C;<strong>M</strong>&#x662F;&#x4E00;&#x4E2A;mapper&#xFF0C;<strong>R</strong>&#x662F;&#x4E00;&#x4E2A;reducer&#x3002;&#xFF09;&#x4E0E;&#x8FD0;&#x884C;&#x591A;&#x4E2A;MapReduce job&#x76F8;&#x6BD4;&#x8FD9;&#x80FD;&#x5B9E;&#x8D28;&#x4E0A;&#x5730;&#x51CF;&#x5C11;&#x5F15;&#x53D1;&#x7684;&#x78C1;&#x76D8;I/O&#x3002;</td>
+</tr>
+<tr>
+<td>FieldSelectionMapReduce (old API) ; FieldSelectionMapper &#x548C; FieldSelectionReducer (new API)</td>
+<td>&#x4E00;&#x4E2A;mapper&#x548C;reducer&#x4ECE;&#x8F93;&#x5165;&#x952E;&#x548C;&#x503C;&#x9009;&#x62E9;&#x5C5E;&#x6027;&#xFF08;&#x5411;Unix&#x7684;<em>cut</em>&#x547D;&#x4EE4;&#xFF09;&#x5E76;&#x4E14;&#x628A;&#x5B83;&#x4EEC;&#x4EE5;&#x8F93;&#x51FA;&#x952E;&#x548C;&#x503C;&#x53D1;&#x51FA;&#x3002;</td>
+</tr>
+<tr>
+<td>IntSumReducer, LongSumReducer</td>
+<td>&#x6C47;&#x603B;&#x6574;&#x6570;&#x503C;&#x4EE5;&#x4E3A;&#x6BCF;&#x4E2A;&#x952E;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x603B;&#x6570;&#x7684;reducers&#x3002;</td>
+</tr>
+<tr>
+<td>InverseMapper</td>
+<td>&#x4EA4;&#x6362;&#x952E;&#x548C;&#x503C;&#x7684;mapper&#x3002;</td>
+</tr>
+<tr>
+<td>MultithreadedMapRunner (old API) , MultithreadedMapper (new API)</td>
+<td>&#x5728;&#x72EC;&#x7ACB;&#x7EBF;&#x7A0B;&#x4E2D;&#x540C;&#x65F6;&#x8FD0;&#x884C;mappers&#x7684;&#x4E00;&#x4E2A;mapper&#xFF08;&#x6216;&#x8005;&#x65E7;API&#x4E2D;&#x7684;map runner&#xFF09;&#x3002;&#x5BF9;&#x975E;CPU-bound&#x7684;mappers&#x6709;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td>TokenCounterMapper</td>
+<td>&#x4F7F;&#x8F93;&#x5165;&#x503C;&#x6807;&#x8BB0;&#x5316;&#x4E3A;&#x8BCD;&#xFF08;&#x4F7F;&#x7528;Java&#x7684;StringTokenizer&#xFF09;&#x5E76;&#x4E14;&#x5C06;&#x6BCF;&#x4E2A;&#x8BCD;&#x548C;&#x4E00;&#x4E2A;&#x8BA1;&#x6570;1&#x4E00;&#x8D77;&#x53D1;&#x51FA;&#x7684;mapper&#x3002;</td>
+</tr>
+<tr>
+<td>RegexMapper</td>
+<td>&#x627E;&#x5230;&#x8F93;&#x5165;&#x503C;&#x4E2D;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x5E76;&#x5C06;&#x5339;&#x914D;&#x503C;&#x548C;&#x8BA1;&#x6570;1&#x4E00;&#x8D77;&#x53D1;&#x51FA;&#x7684;mapper&#x3002;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sorting.html" class="navigation navigation-prev " aria-label="Previous page: 排序">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../di-san-bu-fen-ff1a-hadoop-cao-zuo.html" class="navigation navigation-next " aria-label="Next page: 第三部分：Hadoop操作">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"连接、副数据分发、MapReduce库类","level":"1.3.4.3","depth":3,"next":{"title":"第三部分：Hadoop操作","level":"1.4","depth":1,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo.md","articles":[{"title":"第十章、配置一个Hadoop集群","level":"1.4.1","depth":2,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun.md","articles":[{"title":"集群规范、集群设置及安装","level":"1.4.1.1","depth":3,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/ji-qun-gui-fan.md","articles":[]},{"title":"Hadoop配置","level":"1.4.1.2","depth":3,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/hadooppei-zhi.md","articles":[]},{"title":"安全、基准集群","level":"1.4.1.3","depth":3,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-zhang-3001-pei-zhi-yi-ge-hadoop-ji-qun/an-quan-3001-ji-zhun-ji-qun.md","articles":[]}]},{"title":"第十一章、管理Hadoop","level":"1.4.2","depth":2,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop.md","articles":[{"title":"HDFS","level":"1.4.2.1","depth":3,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/hdfs.md","articles":[]},{"title":"监控和维护","level":"1.4.2.2","depth":3,"path":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.md","ref":"di-san-bu-fen-ff1a-hadoop-cao-zuo/di-shi-yi-zhang-3001-guan-li-hadoop/jian-kong-he-wei-hu.md","articles":[]}]}]},"previous":{"title":"排序","level":"1.3.4.2","depth":3,"path":"di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/sorting.md","ref":"di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/sorting.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"di-er-bu-fen-ff1a-mapreduce/di-jiu-zhang-3001-mapreduce-te-xing/joins.md","mtime":"2019-11-15T07:24:21.317Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-04T10:00:27.200Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
