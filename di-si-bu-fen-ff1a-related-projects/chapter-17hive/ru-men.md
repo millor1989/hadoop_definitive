@@ -153,3 +153,75 @@ Hive并非没有进步，通过支持Tez作为执行引擎，Hive也能够提升
 
 Apache Phoenix使用完全不同的方式：它提供基于HBase的SQL。SQL访问通过一个JDBC driver，把查询转换为HBase扫描，并且利用HBase coprocessors的优势执行服务器侧的聚合。Metadata也保存在HBase中。
 
+## 4、Hive并发模型
+
+Hive 中定义了两种锁 Shared（S）锁和 Exclusive（X）锁。
+
+X 锁是排他性的，而 S 锁可以被并发获取。
+
+Hive 操作，与获取的对应锁：
+
+| 命令                                                        | 锁                                           |
+| ----------------------------------------------------------- | -------------------------------------------- |
+| **select .. T1 partition P1**                               | **S on T1, T1.P1**                           |
+| **insert into T2(partition P2) select .. T1 partition P1**  | **S on T2, T1, T1.P1 and X on T2.P2**        |
+| **insert into T2(partition P.Q) select .. T1 partition P1** | **S on T2, T2.P, T1, T1.P1 and X on T2.P.Q** |
+| **alter table T1 rename T2**                                | **X on T1**                                  |
+| **alter table T1 add cols**                                 | **X on T1**                                  |
+| **alter table T1 replace cols**                             | **X on T1**                                  |
+| **alter table T1 change cols**                              | **X on T1**                                  |
+| **alter table T1 concatenate**                              | **X on T1**                                  |
+| **alter table T1 add partition P1**                         | **S on T1, X on T1.P1**                      |
+| **alter table T1 drop partition P1**                        | **S on T1, X on T1.P1**                      |
+| **alter table T1 touch partition P1**                       | **S on T1, X on T1.P1**                      |
+| **alter table T1 set serdeproperties**                      | **S on T1**                                  |
+| **alter table T1 set serializer**                           | **S on T1**                                  |
+| **alter table T1 set file format**                          | **S on T1**                                  |
+| **alter table T1 set tblproperties**                        | **X on T1**                                  |
+| **alter table T1 partition P1 concatenate**                 | **X on T1.P1**                               |
+| **drop table T1**                                           | **X on T1**                                  |
+
+如果使用了动态分区，可能获取整个表的 X 锁。
+
+### 4.1、查看锁、解锁
+
+```sql
+SHOW LOCKS <TABLE_NAME>;
+
+SHOW LOCKS <TABLE_NAME> EXTENDED;
+
+SHOW LOCKS <TABLE_NAME> PARTITION (<PARTITION_DESC>);
+
+SHOW LOCKS <TABLE_NAME> PARTITION (<PARTITION_DESC>) EXTENDED;
+
+UNLOCK TABLE <TABLE_NAME>
+```
+
+结合 `Explain` 查看 SQL 语句的锁信息：
+
+```sql
+EXPLAIN LOCKS UPDATE target SET b = 1 WHERE p IN (SELECT t.q1 FROM source t WHERE t.a1=5)
+```
+
+结果：
+
+```sql
+LOCK INFORMATION:
+default.source -> SHARED_READ
+default.target.p=1/q=2 -> SHARED_READ
+default.target.p=1/q=3 -> SHARED_READ
+default.target.p=2/q=2 -> SHARED_READ
+default.target.p=2/q=2 -> SHARED_WRITE
+default.target.p=1/q=3 -> SHARED_WRITE
+default.target.p=1/q=2 -> SHARED_WRITE
+```
+
+类似的：
+
+```sql
+EXPLAIN FORMATTED LOCKS <sql>
+```
+
+### 4.2、关闭并发模式
+
+设置 `hive.support.concurrency` 为 false，关闭并发模式。默认为 false，设置为 true 时，支持 `insert`、`update`、`delete` 事务。

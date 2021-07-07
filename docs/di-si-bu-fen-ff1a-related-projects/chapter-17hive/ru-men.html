@@ -1190,6 +1190,118 @@ sample.txt
 <p>&#x4E5F;&#x6709;&#x5176;&#x5B83;&#x4E3B;&#x6D41;&#x5F00;&#x6E90;&#x7684;Hive&#x66FF;&#x4EE3;&#x9009;&#x9879;&#xFF0C;&#x5305;&#x62EC;Facebook&#x7684;Presto&#xFF0C;Apache Drill&#x548C;Spark SQL&#x3002;Presto&#x548C;Drill&#x6709;&#x4E0E;Impala&#x7C7B;&#x4F3C;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x5C3D;&#x7BA1;Drill&#x76EE;&#x6807;&#x662F;SQL:2011&#x800C;&#x4E0D;&#x662F;HiveQL&#x3002;Spark SQL&#x4F7F;&#x7528;Spark&#x4F5C;&#x4E3A;&#x5E95;&#x5C42;&#x5F15;&#x64CE;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;Spark&#x7A0B;&#x5E8F;&#x4E2D;&#x5D4C;&#x5165;SQL&#x67E5;&#x8BE2;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#xFF1A;Spark SQL&#x4E0E;&#x4F7F;&#x7528;Hive&#x5185;&#x90E8;&#x7684;Spark&#x6267;&#x884C;&#x5F15;&#x64CE;&#xFF08;Hive on Spark&#xFF09;&#x4E0D;&#x540C;&#x3002;Hive on Spark&#x662F;Hive&#x9879;&#x76EE;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x652F;&#x6301;Hive&#x7684;&#x6240;&#x6709;&#x7279;&#x5F81;&#x3002;Spark SQL&#xFF0C;&#x5219;&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;SQL&#x5F15;&#x64CE;&#xFF0C;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x7EA7;&#x522B;&#x7684;Hive&#x517C;&#x5BB9;&#x6027;&#x3002;</p>
 <p>Apache Phoenix&#x4F7F;&#x7528;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;&#x5B83;&#x63D0;&#x4F9B;&#x57FA;&#x4E8E;HBase&#x7684;SQL&#x3002;SQL&#x8BBF;&#x95EE;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;JDBC driver&#xFF0C;&#x628A;&#x67E5;&#x8BE2;&#x8F6C;&#x6362;&#x4E3A;HBase&#x626B;&#x63CF;&#xFF0C;&#x5E76;&#x4E14;&#x5229;&#x7528;HBase coprocessors&#x7684;&#x4F18;&#x52BF;&#x6267;&#x884C;&#x670D;&#x52A1;&#x5668;&#x4FA7;&#x7684;&#x805A;&#x5408;&#x3002;Metadata&#x4E5F;&#x4FDD;&#x5B58;&#x5728;HBase&#x4E2D;&#x3002;</p>
+<h2 id="4&#x3001;hive&#x5E76;&#x53D1;&#x6A21;&#x578B;">4&#x3001;Hive&#x5E76;&#x53D1;&#x6A21;&#x578B;</h2>
+<p>Hive &#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x79CD;&#x9501; Shared&#xFF08;S&#xFF09;&#x9501;&#x548C; Exclusive&#xFF08;X&#xFF09;&#x9501;&#x3002;</p>
+<p>X &#x9501;&#x662F;&#x6392;&#x4ED6;&#x6027;&#x7684;&#xFF0C;&#x800C; S &#x9501;&#x53EF;&#x4EE5;&#x88AB;&#x5E76;&#x53D1;&#x83B7;&#x53D6;&#x3002;</p>
+<p>Hive &#x64CD;&#x4F5C;&#xFF0C;&#x4E0E;&#x83B7;&#x53D6;&#x7684;&#x5BF9;&#x5E94;&#x9501;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x547D;&#x4EE4;</th>
+<th>&#x9501;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>select .. T1 partition P1</strong></td>
+<td><strong>S on T1, T1.P1</strong></td>
+</tr>
+<tr>
+<td><strong>insert into T2(partition P2) select .. T1 partition P1</strong></td>
+<td><strong>S on T2, T1, T1.P1 and X on T2.P2</strong></td>
+</tr>
+<tr>
+<td><strong>insert into T2(partition P.Q) select .. T1 partition P1</strong></td>
+<td><strong>S on T2, T2.P, T1, T1.P1 and X on T2.P.Q</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 rename T2</strong></td>
+<td><strong>X on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 add cols</strong></td>
+<td><strong>X on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 replace cols</strong></td>
+<td><strong>X on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 change cols</strong></td>
+<td><strong>X on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 concatenate</strong></td>
+<td><strong>X on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 add partition P1</strong></td>
+<td><strong>S on T1, X on T1.P1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 drop partition P1</strong></td>
+<td><strong>S on T1, X on T1.P1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 touch partition P1</strong></td>
+<td><strong>S on T1, X on T1.P1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 set serdeproperties</strong></td>
+<td><strong>S on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 set serializer</strong></td>
+<td><strong>S on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 set file format</strong></td>
+<td><strong>S on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 set tblproperties</strong></td>
+<td><strong>X on T1</strong></td>
+</tr>
+<tr>
+<td><strong>alter table T1 partition P1 concatenate</strong></td>
+<td><strong>X on T1.P1</strong></td>
+</tr>
+<tr>
+<td><strong>drop table T1</strong></td>
+<td><strong>X on T1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86;&#x52A8;&#x6001;&#x5206;&#x533A;&#xFF0C;&#x53EF;&#x80FD;&#x83B7;&#x53D6;&#x6574;&#x4E2A;&#x8868;&#x7684; X &#x9501;&#x3002;</p>
+<h3 id="41&#x3001;&#x67E5;&#x770B;&#x9501;&#x3001;&#x89E3;&#x9501;">4.1&#x3001;&#x67E5;&#x770B;&#x9501;&#x3001;&#x89E3;&#x9501;</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">SHOW</span> LOCKS &lt;TABLE_NAME&gt;;
+
+<span class="hljs-keyword">SHOW</span> LOCKS &lt;TABLE_NAME&gt; <span class="hljs-keyword">EXTENDED</span>;
+
+<span class="hljs-keyword">SHOW</span> LOCKS &lt;TABLE_NAME&gt; <span class="hljs-keyword">PARTITION</span> (&lt;PARTITION_DESC&gt;);
+
+<span class="hljs-keyword">SHOW</span> LOCKS &lt;TABLE_NAME&gt; <span class="hljs-keyword">PARTITION</span> (&lt;PARTITION_DESC&gt;) <span class="hljs-keyword">EXTENDED</span>;
+
+<span class="hljs-keyword">UNLOCK</span> <span class="hljs-keyword">TABLE</span> &lt;TABLE_NAME&gt;
+</code></pre>
+<p>&#x7ED3;&#x5408; <code>Explain</code> &#x67E5;&#x770B; SQL &#x8BED;&#x53E5;&#x7684;&#x9501;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">EXPLAIN</span> LOCKS <span class="hljs-keyword">UPDATE</span> target <span class="hljs-keyword">SET</span> b = <span class="hljs-number">1</span> <span class="hljs-keyword">WHERE</span> p <span class="hljs-keyword">IN</span> (<span class="hljs-keyword">SELECT</span> t.q1 <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">source</span> t <span class="hljs-keyword">WHERE</span> t.a1=<span class="hljs-number">5</span>)
+</code></pre>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">LOCK</span> INFORMATION:
+<span class="hljs-keyword">default</span>.<span class="hljs-keyword">source</span> -&gt; SHARED_READ
+<span class="hljs-keyword">default</span>.target.p=<span class="hljs-number">1</span>/q=<span class="hljs-number">2</span> -&gt; SHARED_READ
+<span class="hljs-keyword">default</span>.target.p=<span class="hljs-number">1</span>/q=<span class="hljs-number">3</span> -&gt; SHARED_READ
+<span class="hljs-keyword">default</span>.target.p=<span class="hljs-number">2</span>/q=<span class="hljs-number">2</span> -&gt; SHARED_READ
+<span class="hljs-keyword">default</span>.target.p=<span class="hljs-number">2</span>/q=<span class="hljs-number">2</span> -&gt; SHARED_WRITE
+<span class="hljs-keyword">default</span>.target.p=<span class="hljs-number">1</span>/q=<span class="hljs-number">3</span> -&gt; SHARED_WRITE
+<span class="hljs-keyword">default</span>.target.p=<span class="hljs-number">1</span>/q=<span class="hljs-number">2</span> -&gt; SHARED_WRITE
+</code></pre>
+<p>&#x7C7B;&#x4F3C;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">EXPLAIN</span> FORMATTED LOCKS &lt;<span class="hljs-keyword">sql</span>&gt;
+</code></pre>
+<h3 id="42&#x3001;&#x5173;&#x95ED;&#x5E76;&#x53D1;&#x6A21;&#x5F0F;">4.2&#x3001;&#x5173;&#x95ED;&#x5E76;&#x53D1;&#x6A21;&#x5F0F;</h3>
+<p>&#x8BBE;&#x7F6E; <code>hive.support.concurrency</code> &#x4E3A; false&#xFF0C;&#x5173;&#x95ED;&#x5E76;&#x53D1;&#x6A21;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A; false&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A; true &#x65F6;&#xFF0C;&#x652F;&#x6301; <code>insert</code>&#x3001;<code>update</code>&#x3001;<code>delete</code> &#x4E8B;&#x52A1;&#x3002;</p>
 
                                 
                                 </section>
@@ -1233,7 +1345,7 @@ sample.txt
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安装Hive","level":"1.5.6.1","depth":3,"next":{"title":"运行Hive","level":"1.5.6.2","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","articles":[]},"previous":{"title":"第17章、Hive","level":"1.5.6","depth":2,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive.md","articles":[{"title":"安装Hive","level":"1.5.6.1","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","articles":[]},{"title":"运行Hive","level":"1.5.6.2","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","articles":[]},{"title":"HiveQL","level":"1.5.6.3","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.md","articles":[]},{"title":"查询数据","level":"1.5.6.4","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.md","articles":[]},{"title":"LanguageManualHive语言手册","level":"1.5.6.5","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","mtime":"2020-07-30T07:40:27.810Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-04T10:00:27.200Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"安装Hive","level":"1.5.6.1","depth":3,"next":{"title":"运行Hive","level":"1.5.6.2","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","articles":[]},"previous":{"title":"第17章、Hive","level":"1.5.6","depth":2,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive.md","articles":[{"title":"安装Hive","level":"1.5.6.1","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","articles":[]},{"title":"运行Hive","level":"1.5.6.2","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/yun-xing-hive.md","articles":[]},{"title":"HiveQL","level":"1.5.6.3","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/hiveql.md","articles":[]},{"title":"查询数据","level":"1.5.6.4","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/cha-xun-shu-ju.md","articles":[]},{"title":"LanguageManualHive语言手册","level":"1.5.6.5","depth":3,"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.md","ref":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/languagemanualhiveyu-yan-shou-ce.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"di-si-bu-fen-ff1a-related-projects/chapter-17hive/ru-men.md","mtime":"2021-07-07T07:09:05.957Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-07T08:30:15.371Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

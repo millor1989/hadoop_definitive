@@ -354,6 +354,12 @@ propery文件应该位于edge node上，workflow和脚本应该在HDFS中。
 
 propery文件中可以有多余的参数，所以一个 property 文件也可以用于多个workflow。但是如果propery文件缺少workflow所需的参数，则会发生错误。
 
+##### 执行日志查看
+
+http://hostPort_or_url/oozie/list_oozie_workflow/0004214-210430135612837-oozie-oozi-W/
+
+其中 `0004214-210430135612837-oozie-oozi-W` 是 WorkFlow 的 Id。
+
 #### 3、Coordinator
 
 在之前例子中workflow以Coordinator方式运行时，不用创建表的两个步骤。在现实场景中，外部表会有流动的数据，当数据加载到外部表，数据应该被处理到ORC 表中。
@@ -464,7 +470,7 @@ Oozie Bundle系统可以用于执行一组coordinator应用。coordinator应用�
 
 #### 5、Hue 和 Oozie
 
-##### HUE --&gt; Workflows --&gt; Editors --&gt; Workflows
+##### 打开 HUE --&gt; 选择 Workflows --&gt; 选择 Editors --&gt; 选择 Workflows
 
 ![1619084869293](/assets/1619084869293.png)
 
@@ -477,3 +483,44 @@ Oozie Bundle系统可以用于执行一组coordinator应用。coordinator应用�
 ![1619085155617](/assets/1619085155617.png)
 
 设置对应的脚本和依赖文件。脚本和依赖文件通过点击右上目录图标，上传到HDFS指定目录。最后保存。
+
+#### 6、Workflow 中的数据传递
+
+参考[链接](https://www.cnblogs.com/xing901022/p/6501448.html)。
+
+Oozie workflow 中，后面的 action 就基于 EL 表达式使用前面 action 的输出（workflow定义中，前面 action 需配置 `<capture-output>`，将输出捕获）。后面的 action 使用如下 EL 表达来获取前面的输出：
+
+```
+${wf:actionData('action-name').key-name}
+
+#或者
+
+${wf:actionData('action-name')['key-name']}
+```
+
+对于 shell action，只用在 shell 中用 `echo` 将属性输出（必须是 `key=value` 形式），比如：
+
+```shell
+test='test123'
+echo "test=$test"
+```
+
+对于 Java action：
+
+```java
+private static final String OOZIE_ACTION_OUTPUT_PROPERTIES = "oozie.action.output.properties";
+
+String oozieProp = System.getProperty(OOZIE_ACTION_OUTPUT_PROPERTIES);
+        if (oozieProp != null) {
+            File propFile = new File(oozieProp);
+            Properties props = new Properties();
+            props.setProperty(propKey0, propVal0);
+            props.setProperty(propKey1, propVal1);
+            OutputStream os = new FileOutputStream(propFile);
+            props.store(os, "");
+            os.close();
+        } else
+            throw new RuntimeException(OOZIE_ACTION_OUTPUT_PROPERTIES + " System property not defined");
+```
+
+起始，无论 Java 还是 Shell，都是将捕获的输出保存到了 `oozie.action.output.properties` 属性对应得文件中，只是 Oozie 本身实现了对 shell 输出的保存。
