@@ -141,7 +141,7 @@ Last contact: Sat Aug 31 17:35:43 CST 2019
 基本文件系统操作命令_**hadoop fs**_
 _**hadoop fs**_命令支持与HDFS交互，也支持和其他Hadoop支持文件系统（比如本地文件系统（Local FS），WebHDFS，S3 FS等）交互。
 
-※ 相似的命令_**hadoop dfs**_、_**hdfs dfs**_，只能操作HDFS文件系统（包括与Local FS间的操作），前者已经Deprecated，一般使用后者。
+※ 相似的命令_**hadoop dfs**_、_**hdfs dfs**_，只能操作HDFS文件系统（包括与Local FS间的操作），前者已经Deprecated，一般使用后者。[官方文档](http://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html)
 
 命令行语法：
 ```shell

@@ -248,7 +248,7 @@ Hadoop在不同地方为不同的受众产生日志：日志种类如下：
 | MapReduce job history log | Users | 运行job过程中发生的事件（如task完成）的日志。保存在HDFS中。 |
 | MapReduce task logs | Users | 每个task子进程都会用log4j产生一个日志文件（叫做_syslog_）、一个发送到标准输出的数据的文件（_stdout_）、一个标准错误输出文件（_stderr_）。保存在**YARN\_LOG\_DIR**环境变量定义的目录的_userlogs_子目录中。 |
 
-YARN有一个用于日志聚合（_log aggregation_）的服务，获取完成应用的日志并把它们移动到HDFS，它们被以存档为目的保存在一个容器文件中。如果开启这个服务（通过设置集群的_yarn.log-aggregation-enable_为true），就可以通过task attempt web UI的_**logs**_链接或者使用命令_**mapred job -logs**_来查看task日志。
+YARN有一个用于日志聚合（_log aggregation_）的服务，获取完成应用的日志并把它们移动到HDFS，它们被以存档为目的保存在一个容器文件中。如果开启这个服务（通过设置集群的_yarn.log-aggregation-enable_为true），就可以通过task attempt web UI的_**logs**_链接或者使用命令_**mapred job -logs**_来查看task日志。日志聚合服务在应用程序运行结束后，将容器日志转移到 _yarn.nodemanager.remote-app-log-dir_ 对应的 HDFS 目录，所以可以通过 HDFS 直接查看日志文件。
 
 默认是没有开启日志聚合的。这种情况下，可以通过地址[http://node-manager-host:8042/logs/userlogs](http://node-manager-host:8042/logs/userlogs)访问node manager的web UI来获取task日志。
 
