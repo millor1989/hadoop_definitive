@@ -500,7 +500,7 @@ ALTER TABLE target ADD IF NOT EXISTS PARTITION(s_key='123');
 
 **※** 没有分区的表，是不能增加分区的。想要使表改为分区表，大概要重建表吧？毕竟不是什么复杂的事。
 
-**※** 另外，还有metaStore检查命令**MSCK**，可以用来添加HDFS实际存在，而Hive分区元数据中没有的分区。
+**※** 另外，还有 metaStore 检查命令 **MSCK**（Hive MetaStore Consistency Check），可以用来添加 HDFS 实际存在，而 Hive 分区元数据中没有的分区；本分版本的 Hive （2.4.0，3.0.0，3.1.0）支持删除 HDFS 中不存在而 Hive Metastore 中还存在的分区。
 
 ```sql
 MSCK REPAIR TABLE table_name
