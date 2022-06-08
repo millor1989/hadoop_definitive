@@ -45,7 +45,7 @@ hive> SELECT c1[0], c2['b'], c3.c, c4 FROM complex;
 
 ### 5.2、Operators and Functions
 
-\|\|：等价与_OR_
+\|\|：等价于 _OR_
 
 _concat_：字符串连接
 
@@ -102,7 +102,7 @@ LOAD DATA INPATH '/user/tom/data.txt' INTO TABLE external_table;
 
 Hive不会去管理数据，加载数据时不会把数据移动到它的仓库目录。在创建外部表时，不会校验外部的位置是否存在。这是一个有用的特征，因为这意味着可以在创建表后延迟地创建数据。
 
-删除外部表是，Hive不会处理表数据，只会删除表的元数据。
+删除外部表时，Hive不会处理表数据，只会删除表的元数据。
 
 创建managed表也可以使用_LOCATION_关键字来指定表的位置：
 
@@ -260,21 +260,23 @@ hive> SELECT * FROM users
 
 ### 6.3、Storage Formats
 
-Hive中有两种控制表存储的方式：行格式（row format）和文件格式（file format）。行格式决定行和某行的属性如何保存。用Hive术语来说，行格式由一个_**SerDe**_（一个序列化器和反序列化器的复合次）定义。
+Hive中控制表存储的两个维度：**行格式**（row format）和**文件格式**（file format）。行格式决定行和某行的属性的存储。用Hive术语来说，行格式由一个 _**SerDe**_（一个序列化器和反序列化器的复合词）定义。
 
-查询表时，SerDe表现为一个反序列化器，它会将文件中一行字节数据反序列化为Hive内部使用的对象（Hive对这个行数据对象执行操作）。当执行**INSERT**或者**CTAS**（查看[导入数据]()章节）时，SerDe作为序列化器，表的SerDe会将一行数据的Hive内部表示序列化为写到输出文件的字节。
+查询表时，SerDe 表现为一个反序列化器，它会将文件中一行字节数据反序列化为Hive内部使用的对象（Hive对这个行数据对象执行操作）。当执行 **INSERT** 或者 **CTAS**（查看[导入数据]()章节）时，SerDe 作为序列化器，表的SerDe 会将一行数据的 Hive 内部表示序列化为写到输出文件的字节。
 
-文件格式决定了行中属性的容器格式（container format for fields in a row）。最简单的格式是普通文本文件，但是也有面向行（row-oriented）和面向列（column-oriented）二进制格式可以使用。
+文件格式决定了一个行中属性的容器格式（container format for fields in a row）。最简单的格式是普通文本文件，但是也有面向行（row-oriented）和面向列（column-oriented）二进制格式可以使用。
 
 #### 6.3.1、The Default storage format：Delimited text
 
-如果创建Hive表时没有使用**ROW FORMAT**和**STORED**子句，默认格式是一行一条的定界文本（delimited text with one row per line）。
+如果创建Hive表时没有使用 **ROW FORMAT** 和 **STORED AS** 子句，默认格式是一行一条的定界文本（delimited text with one row per line）。
 
-默认的行（属性）定界符（delimiter）不是制表符，而是ASCII控制符集中的Ctrl-A符（ASCII码是1）。选择使用Ctrl-A，在文档中有时写作^A，是因为相比制表符在文本中出现^A的概率更少。在Hive中没有转义定界符的方法，所以选择不会在数据属性中出现的字符很重要。
+默认的**行定界符**（row delimiter，分隔属性）不是制表符，而是 ASCII 控制字符集中的 Ctrl-A 符（ASCII 码是1）。选择使用Ctrl-A，在文档中有时写作^A，是因为相比制表符，在文本中出现 ^A 的概率更少。在 Hive 中没有转义定界符的方法，所以选择不会在数据属性中出现的字符很重要。
 
-默认的集合定界符是Ctrl-B，用于给ARRAY、STRUCT、或者Map的键值对中的条目定界。默认的map键定界符是Ctrl-C，用于界定Map中的键和值。表中的行由换行符进行定界。
+默认的**集合定界符**（collection item delimiter）是 Ctrl-B，用于给 ARRAY、STRUCT、或者 Map 的键值对中的条目定界。默认的map键定界符是Ctrl-C，用于界定 Map 中的键和值。
 
-**警告**：之前关于定界符的描述对于通常的扁平的数据结构，只包含基本类型的复杂类型是正确的。但是，对于嵌套类型，就没那么简单了，事实上嵌套的层级决定了定界符。例如，对于一个数组的数组，外层数组定界符是Ctrl-B，但是内层数组定界符是Ctrl-C——ASCII控制符集中的下一个。Hive事实上支持8层级别的定界符，对应于ASCII码的1-8，但是只能重写前三个。
+表中的**行则使用换行符进行定界**。
+
+**警告**：之前关于定界符的描述对于通常的扁平的数据结构，只包含基本类型的复杂类型是正确的。但是，对于嵌套类型，就没那么简单了，事实上嵌套的层级决定了定界符。例如，对于一个数组的数组，外层数组定界符是Ctrl-B，但是内层数组定界符是Ctrl-C——ASCII控制符集中的下一个。Hive 事实上支持 8 层级别的定界符，对应于ASCII码的1-8，但是只能重写（override，重新定义，重置）前三个。
 
 综上所述，建表语句：
 
@@ -294,11 +296,11 @@ ROW FORMAT DELIMITED
 STORED AS TEXTFILE;
 ```
 
-注意，定界符的八进制格式：例如\001代表Ctrl-A。
+注意，定界符的八进制格式：例如 \001 代表 Ctrl-A。
 
-Hive内部使用一个叫作_LazySimpleSerDe_的SerDe用于这种定界的格式（即Delimited text），与面向行的MapReduce文本输入和输出格式一起使用。“lazy”前缀表示延迟地反序列化属性——只在被访问的时候。但是，这不是一个紧凑的格式，因为属性是以冗余文本格式（verbose textual format）保存的，例如，Boolean值保存为字面的字符串_true_或者_false_。
+Hive内部使用一个叫作 _LazySimpleSerDe_ 的 SerDe 用于这种定界的格式（即Delimited text），与面向行的MapReduce文本输入和输出格式一起使用。“lazy”前缀表示延迟地反序列化属性——只在被访问的时候。但是，这不是一个紧凑的格式，因为属性是以冗余文本格式（verbose textual format）保存的，例如，Boolean 值保存为字面的字符串 _true_ 或者 _false_。
 
-Delimited text这种格式很简单，但是，相比之下，二进制存储格式更加的紧凑和高效。
+Delimited text 这种格式很简单，但是，相比之下，二进制存储格式更加的紧凑和高效。
 
 #### 6.3.2、Binary storage formats：Sequence files，Avro datafiles，Parquet files，RCFiles，and ORCFiles
 
@@ -474,7 +476,7 @@ CTAS操作是原子的，所以，如果**SELECT**查询因为某些原因失败
 ALTER TABLE source RENAME TO target;
 ```
 
-除了修改了表的元数据以外，对于内部表，**ALTER TABLE**语句把底层的表目录进行了移动来对应新的表名。这个例子里，_/user/hive/warehouse/source_被重命名为_/user/hive/warehouse/target_。但是，对于外部表，只会修改表的元数据，不会移动底层目录。
+除了修改了表的元数据以外，对于内部表，**ALTER TABLE**语句把底层的表目录进行了移动来对应新的表名。这个例子里，_/user/hive/warehouse/source_ 被重命名为 _/user/hive/warehouse/target_。但是，对于外部表，只会修改表的元数据，不会移动底层目录。
 
 也可以修改Hive表的列定义，增加新列，甚至可以替换表中的所有既存列。例如，增加新列：
 
@@ -539,6 +541,3 @@ TRUNCATE TABLE my_table;
 ```sql
 CREATE TABLE new_table LIKE existing_table;
 ```
-
-
-
