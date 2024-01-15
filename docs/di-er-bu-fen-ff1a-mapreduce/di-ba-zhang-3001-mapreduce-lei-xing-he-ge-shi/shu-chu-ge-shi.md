@@ -6,17 +6,17 @@ Hadoop有与输出格式相对应的输入格式。OutputFormat类层级如**图
 
 ![](/assets/1572256136500.png)
 
-### 3.1、Text输出（Text Output）
+### 3.1、Text 输出（Text Output）
 
-默认输出格式，**TextOutputFormat**，把记录写作一行文本。键和值可以是任何类型，因为**TextOutputFormat**通过调用它们的*toString()*方法把它们转为字符串。每个键值对都用制表符分隔，分隔符可以通过*mapreduce.output.textoutputformat.separator*属性更改。对应于TextOutputFormat的输出读取的输入格式是**KeyValueTextInputFormat**，因为它可以根据配置的分隔符把行切分为键值对。
+默认输出格式，**TextOutputFormat**，把记录写作一行文本。键和值可以是任何类型，因为**TextOutputFormat** 通过调用它们的 *toString()* 方法把它们转为字符串。每个键值对都用制表符分隔，分隔符可以通过 *mapreduce.output.textoutputformat.separator* 属性更改。对应于 **TextOutputFormat** 的输出读取的输入格式是 **KeyValueTextInputFormat**，因为它可以根据配置的分隔符把行切分为键值对。
 
-通过使用**NullWritable**类型，可以将**TextOutputFormat**输出的键或者值（或者键和值，使输出格式与**NullOutputFormat**等价，即没有任何输出）覆盖。这会导致输出行中没有分隔符，使得输出可以适用于**TextInputFormat**读取。
+通过使用 **NullWritable** 类型，可以将 **TextOutputFormat** 输出的键或者值（或者键和值，使输出格式与**NullOutputFormat**等价，即没有任何输出）覆盖。这会导致输出行中没有分隔符，使得输出可以适用于 **TextInputFormat** 读取。
 
 ### 3.2、二进制输出（Binary Output）
 
 #### 3.2.1、SequenceFileOutputFormat
 
-**SequenceFileOutputFormat**输出顺序文件。如果后续MapReduce job的输入是顺序文件，这是一个好的选择，因为它是紧凑且压缩的。压缩通过**SequenceFileOutputFormat**的静态方法（开启压缩、设置codec）控制。
+**SequenceFileOutputFormat** 输出顺序文件。如果后续MapReduce job的输入是顺序文件，这是一个好的选择，因为它是紧凑且压缩的。压缩通过 **SequenceFileOutputFormat** 的静态方法（开启压缩、设置codec）控制。
 
 #### 3.2.2、SequenceFileAsBinaryOutputFormat
 
@@ -24,7 +24,7 @@ Hadoop有与输出格式相对应的输入格式。OutputFormat类层级如**图
 
 #### 3.2.3、MapFileOutputFormat
 
-MapFileOutputFormat写map文件作为输出。MapFile中的键必须按序添加，所以要确保reducer按序输出键。注意：reduce输入键是保证是排序的（sorted），但是输出键是reduce函数控制的，在通用的MapReduce约定中并没有要求reduce输出键是以任何一种方式排序的。需要排序的输出的键的额外限制只是**MapFileOutputFormat**的需求。
+**MapFileOutputFormat** 写 map 文件作为输出。MapFile 中的键必须按序添加，所以要确保 reducer 按序输出键。注意：reduce 输入键是保证是排序的（sorted），但是输出键是 reduce 函数控制的，在通用的 MapReduce 约定中并没有要求 reduce 输出键是以任何一种方式排序的。需要排序的输出的键的额外限制只是 **MapFileOutputFormat** 的需求。
 
 ### 3.3、Multiple Outputs
 

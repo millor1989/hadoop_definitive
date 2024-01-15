@@ -1,31 +1,31 @@
 ## 7、MapReduce工作流（MapReduce Workflows）
 
-目前为止，讨论的数据处理例子都是简单地找出某年的最大气温。如果处理更加复杂，复杂性通常通过拥有更多的MapReduce jobs显现，而不是有更复杂的功能的map和reduce。换句话说，经验法则是：增加更多的jobs，而不是增加jobs的复杂度。
+目前为止，讨论的数据处理例子都是简单地找出某年的最大气温。如果处理更加复杂，复杂性通常通过拥有更多的 MapReduce jobs 显现，而不是用更复杂的功能的 map 和 reduce。换句话说，经验法则是：增加更多的 jobs，而不是增加 jobs 的复杂度。
 
-对于更加复杂的问题，值得考虑比MapReduce更高级的语言，例如Pig、Hive、Cascading、Crunch或者Spark。一个直接的益处是把你从做需求到MapReduce jobs的翻译中解脱出来，让你专注于分析要做的事。
+对于更加复杂的问题，值得考虑比 MapReduce 更高级的语言，例如 Pig、Hive、Cascading、Crunch 或者 Spark。一个直接的益处是把你从做需求到 MapReduce jobs 的翻译中解脱出来，让你专注于分析要做的事。
 
 ### 7.1、把问题分解为MapReduce jobs（Decomposing a Problem into MapReduce Jobs）
 
-把问题分解为更多（更简单）的MapReduc jobs的依据是这样做导致的是更加可组合以及更加可维护的mappers和reducers。
+把问题分解为更多（更简单）的 MapReduc jobs 的依据是这样做导致的是更加可组合以及更加可维护的 mappers 和 reducers。
 
-mapper通常进行输入解析、推断（筛选相关的fields）、过滤（移除不感兴趣的记录）。在之前的例子中，在一个mapper中实现了所有这些功能。使用Hadoop自带的**ChainMapper**库类可以把这个mapper切分为不同的mapper并把它们链接进一个mapper。使用**ChainReducer**连接，就可以在一个MapReduce job中运行一个mappers链，跟着运行一个reducer和另一个mappers链。
+mapper 通常进行输入解析、推断（筛选相关的 fields）、过滤（移除不感兴趣的记录）。在之前的例子中，在一个 mapper 中实现了所有这些功能。使用 Hadoop 自带的 **ChainMapper** 库类可以把这个 mapper 切分为不同的 mapper 并把它们链接进一个 mapper。使用 **ChainReducer** 连接，就可以在一个 MapReduce job 中运行一个 mappers 链，跟着运行一个 reducer 和另一个 mappers 链。
 
 ### 7.2、JobControl
 
-当MapReduce工作流中有多个jobs，就有一个问题：jobs怎样按序执行。有多种解决方法，主要的考虑是是否有一个线性jobs链或者更复杂的jobs的有向无环图（DAG）。
+当 MapReduce 工作流中有多个 jobs，就有一个问题：jobs 怎样按序执行。有多种解决方法，主要的考虑是是否有一个线性 jobs 链或者更复杂的 jobs 的有向无环图（DAG）。
 
-对于线性链，最简单的方法是一个接一个运行jobs，运行下一个job前等前一个job运行成功， 如下：
+对于线性链，最简单的方法是一个接一个运行 jobs，运行下一个 job 前等前一个 job 运行成功， 如下：
 
 ```java
 JobClient.runJob(conf1);
 JobClient.runJob(conf2);
 ```
 
-如果job失败，_runJob\(\)_方法会抛出IOException，那么pipeline中的后面的jobs就不会执行。依应用需求而定，也可以捕捉异常并清理之前jobs产生的中间数据。
+如果 job 失败，_runJob\(\)_ 方法会抛出 `IOException`，那么 pipeline 中的后面的 jobs 就不会执行。依应用需求而定，也可以捕捉异常并清理之前 jobs 产生的中间数据。
 
-新的MapReduce API也类似，除了要通过检验_waitForCompletion\(\)_方法的Boolean返回值来确定job是否成功。
+新的 MapReduce API 也类似，除了要通过检验 _waitForCompletion\(\)_ 方法的 Boolean 返回值来确定 job 是否成功。
 
-对于比线性链更复杂的，可以使用**JobControl**类。一个**JobControl**实例代表要运行的一个jobs图。增加job配置，告诉**JobControl**实例jobs直接的依赖关系。在一个线程中运行**JobControl**，它就会按照依赖顺序运行jobs。可以论询进度，当jobs完成时，可以查询所有jobs的状态和任何失败的相关错误信息。如果job失败，**JobControl**不会运行它的依赖。
+对于比线性链更复杂的，可以使用 **JobControl** 类。一个 **JobControl** 实例代表要运行的一个 jobs 图。增加 job 配置，告诉 **JobControl** 实例 jobs 直接的依赖关系。在一个线程中运行 **JobControl**，它就会按照依赖顺序运行 jobs。可以论询进度，当 jobs 完成时，可以查询所有 jobs 的状态和任何失败的相关错误信息。如果 job 失败，**JobControl** 不会运行它的依赖。
 
 ### 7.3、Apache Oozie
 

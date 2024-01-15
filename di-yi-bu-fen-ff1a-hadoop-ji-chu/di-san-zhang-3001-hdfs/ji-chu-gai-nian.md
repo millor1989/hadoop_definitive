@@ -16,23 +16,37 @@ HDFS只有一个用户写，总是在文件的末尾写，只能追加。不支�
 
 ### 2.1、块（Blocks）
 
-磁盘有块大小（block size），是读写数据的最小量。HDFS也有块（Block）的概念，默认大小128M。与磁盘文件系统不同的是，HDFS中小于一个block大小的文件不会占用整个block的底层存储。
+磁盘有块大小（block size），是读写数据的最小量。HDFS 也有块（Block）的概念，默认大小 128M。与磁盘文件系统不同的是，HDFS 中小于一个 block 大小的文件不会占用整个 block 的底层存储。
 
-HDFS中block大小比较大的原因是减少寻道（seek）的开销。如果block足够大，传输数据消耗的时间会明显大于寻找block起始位置的开销。这样，传输由多个block组成的大文件近似于以磁盘的传输速率，而不会受制于寻道（seek）时间。
+HDFS 中 block 大小比较大的原因是减少寻道（seek）的开销。如果 block 足够大，传输数据消耗的时间会明显大于寻找 block 起始位置的开销。这样，传输由多个 block 组成的大文件近似于以磁盘的传输速率，而不会受制于寻道（seek）时间。
 
-在分布式文件系统中使用block的抽象概念有几个好处：
+在分布式文件系统中使用 block 的抽象概念有几个好处：
 
-* **第一**、也是最明显的好处是：一个文件可以比网络中任何单一磁盘大。没有任何需求要一个文件的blocks保存在同一个磁盘上，所以可以利用整个集群的磁盘。
-* **第二**、用block的抽象概念而不是文件这个概念简化了存储子系统（storage subsystem）。存储子系统处理blocks，简化了存储的管理（blocks是固定大小的，很容易计算一个磁盘可以存储多少个blocks）并且消除了metadata顾虑（因为blocks只是存储数据的一块，文件metadata例如许可信息不必和block一起存储，另一个系统可以单独处理metadata）。
-* **另外**，在容错和可用性方面，blocks和复本（replica）很配。为了防止block的损坏和磁盘或机器的损坏，每个block被复制到一定数量的（通常3个）物理上独立的机器。如果一个block不可用，可以从另一个位置以一种对客户端透明的方式读取一个复本。不可用的block会从它的备用位置备份到其它可用的机器以恢复到正常的备份数量。类似地，一些应用可能选择设置一个较高的block备份因子以在集群中分散读取负载。
+* **第一**、也是最明显的好处是：一个文件可以比网络中任何单一磁盘大。没有任何需求要一个文件的 blocks 保存在同一个磁盘上，所以可以利用整个集群的磁盘。
+* **第二**、用 block 的抽象概念而不是文件这个概念简化了存储子系统（storage subsystem）。存储子系统处理 blocks，简化了存储的管理（blocks 是固定大小的，很容易计算一个磁盘可以存储多少个 blocks）并且消除了 metadata 顾虑（因为 blocks 只是存储数据的一块，文件 metadata 例如许可信息不必和 block 一起存储，另一个系统可以单独处理 metadata）。
+* **另外**，在容错和可用性方面，blocks 和复本（replica）很配。为了防止 block 的损坏和磁盘或机器的损坏，每个 block 被复制到一定数量的（通常3个）物理上独立的机器。如果一个 block 不可用，可以从另一个位置以一种对客户端透明的方式读取一个复本。不可用的 block 会从它的备用位置备份到其它可用的机器以恢复到正常的备份数量。类似地，一些应用可能选择设置一个较高的 block 备份因子以在集群中分散读取负载。
 
-HDFS的 _fsck_ 命令会列出文件系统中组成每个文件的blocks：
+HDFS 的 _fsck_ 命令会列出文件系统中组成每个文件的 blocks：
 
 ```shell
 hdfs fsck / -files -blocks
 ```
 
-### 2.2、Namenodes和Datanodes
+`hdfs fsck <dir/file> -options` 命令，是对 HDFS 目录或文件进行健康检查。最后输出的 `avg. block size` 不是 hdfs 默认 block size 的大小，而是所检查目录中文件的平均的实际文件块大小。
+
+```bash
+hdfs dfs -stat "%o %r" <filePath>
+```
+
+上面的命令，可以显示 HDFS 文件使用默认 block size 和默认的副本个数。
+
+```bash
+hdfs getconf -confKey dfs.blocksize
+```
+
+上面的命令是获取 HDFS 的默认 block size 设置的。
+
+### 2.2、Namenodes 和 Datanodes
 
 HDFS集群以master-worker模式运行两种类型的nodes：一个**namenode**（_**master**_）和几个**datanodes**（_**worker**_）。namenode管理文件系统命名空间（filesystem namespace）。它维护文件系统树（filesystem tree）和文件系统树中的所有文件和目录的元数据（metadata）。这些信息以两个文件（namespace image和edit log）的形式永久地保存在本地磁盘上。namenode也知道datanodes上给定文件的所有blocks的位置；可是，它不永久保存block的位置信息，因为在系统启动时这些信息可用从datanodes重新构成。
 

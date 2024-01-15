@@ -29,7 +29,7 @@
     * [MapReduce工作流](di-er-bu-fen-ff1a-mapreduce/di-liu-zhang/diao-shi.md)
   * [第七章、MapReduce如何工作](di-er-bu-fen-ff1a-mapreduce/mapreduce.md)
     * [运行与故障](di-er-bu-fen-ff1a-mapreduce/mapreduce/mapreduce-jobyun-xing-pou-xi.md)
-    * [混洗和分类](di-er-bu-fen-ff1a-mapreduce/mapreduce/shufflehe-sort.md)
+    * [混洗和排序](di-er-bu-fen-ff1a-mapreduce/mapreduce/shufflehe-sort.md)
     * [Task执行](di-er-bu-fen-ff1a-mapreduce/mapreduce/taskzhi-xing.md)
   * [第八章、MapReduce类型和格式](di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi.md)
     * [MapReduce类型](di-er-bu-fen-ff1a-mapreduce/di-ba-zhang-3001-mapreduce-lei-xing-he-ge-shi/mapreducelei-xing.md)
